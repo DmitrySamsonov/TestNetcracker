@@ -6,7 +6,12 @@
 
     <groupId>dima.samsonov</groupId>
     <artifactId>dima_samsonov_test</artifactId>
+    <packaging>war</packaging>>
     <version>1.0</version>
+
+    <build>
+        <finalName>university</finalName>
+    </build>
 
 
 </project>
