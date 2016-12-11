@@ -12,14 +12,14 @@ import java.io.IOException;
  * Created by dima on 11.12.2016.
  */
 
-public class ListServlet extends HttpServlet {
+public class StudentsListServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-//        RequestDispatcher editView = request.getRequestDispatcher("second.jsp");
-//        editView.forward(request, response);
+        RequestDispatcher editView = request.getRequestDispatcher("students.jsp");
+        editView.forward(request, response);
     }
 }

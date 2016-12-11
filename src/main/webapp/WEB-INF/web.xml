@@ -17,18 +17,21 @@
 
 
     <servlet>
-        <servlet-name>ListServlet</servlet-name>
-        <servlet-class>servlets.ListServlet</servlet-class>
+        <servlet-name>StudentsListServlet</servlet-name>
+        <servlet-class>servlets.StudentsListServlet</servlet-class>
     </servlet>
+    <servlet-mapping>
+        <servlet-name>StudentsListServlet</servlet-name>
+        <url-pattern>/students</url-pattern>
+    </servlet-mapping>
+
+
+
     <servlet>
         <servlet-name>dispatcher</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>ListServlet</servlet-name>
-        <url-pattern>/list</url-pattern>
-    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.form</url-pattern>
