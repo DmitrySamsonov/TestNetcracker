@@ -19,6 +19,8 @@ public class StudentsListServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        System.out.println("HI HI HI HI HI HI HI HI");
+
         RequestDispatcher editView = request.getRequestDispatcher("students.jsp");
         editView.forward(request, response);
     }
