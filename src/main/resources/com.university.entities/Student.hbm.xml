@@ -4,5 +4,11 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="com.university.entities.Student"/>
+    <class name="com.university.entities.Student" table="student" schema="university">
+        <id name="id" column="id"/>
+        <property name="fio" column="fio"/>
+        <property name="groupNumber" column="groupNumber"/>
+        <property name="scolarship" column="scolarship"/>
+        <property name="dateEnter" column="date_enter"/>
+    </class>
 </hibernate-mapping>
