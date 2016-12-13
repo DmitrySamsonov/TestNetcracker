@@ -1,4 +1,4 @@
-package university.entities;
+package com.university.entities;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -6,12 +6,12 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 /**
- * Created by dima on 11.12.2016.
+ * Created by dima on 14.12.2016.
  */
 @Entity
-public class Groups {
+public class Group {
     private int id;
-    private int group;
+    private int groupNumber;
     private String department;
 
     @Id
@@ -25,13 +25,13 @@ public class Groups {
     }
 
     @Basic
-    @Column(name = "group")
-    public int getGroup() {
-        return group;
+    @Column(name = "groupNumber")
+    public int getGroupNumber() {
+        return groupNumber;
     }
 
-    public void setGroup(int group) {
-        this.group = group;
+    public void setGroupNumber(int groupNumber) {
+        this.groupNumber = groupNumber;
     }
 
     @Basic
@@ -49,11 +49,11 @@ public class Groups {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Groups groups = (Groups) o;
+        Group group = (Group) o;
 
-        if (id != groups.id) return false;
-        if (group != groups.group) return false;
-        if (department != null ? !department.equals(groups.department) : groups.department != null) return false;
+        if (id != group.id) return false;
+        if (groupNumber != group.groupNumber) return false;
+        if (department != null ? !department.equals(group.department) : group.department != null) return false;
 
         return true;
     }
@@ -61,7 +61,7 @@ public class Groups {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + group;
+        result = 31 * result + groupNumber;
         result = 31 * result + (department != null ? department.hashCode() : 0);
         return result;
     }

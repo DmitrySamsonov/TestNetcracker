@@ -18,7 +18,7 @@
 
     <servlet>
         <servlet-name>StudentsListServlet</servlet-name>
-        <servlet-class>servlets.StudentsListServlet</servlet-class>
+        <servlet-class>com.university.servlets.StudentsListServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>StudentsListServlet</servlet-name>

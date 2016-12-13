@@ -1,4 +1,4 @@
-package university.entities;
+package com.university.entities;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -7,13 +7,13 @@ import javax.persistence.Id;
 import java.sql.Date;
 
 /**
- * Created by dima on 11.12.2016.
+ * Created by dima on 14.12.2016.
  */
 @Entity
-public class Students {
+public class Student {
     private int id;
     private String fio;
-    private int group;
+    private int groupNumber;
     private String scolarship;
     private Date dateEnter;
 
@@ -38,13 +38,13 @@ public class Students {
     }
 
     @Basic
-    @Column(name = "group")
-    public int getGroup() {
-        return group;
+    @Column(name = "groupNumber")
+    public int getGroupNumber() {
+        return groupNumber;
     }
 
-    public void setGroup(int group) {
-        this.group = group;
+    public void setGroupNumber(int groupNumber) {
+        this.groupNumber = groupNumber;
     }
 
     @Basic
@@ -72,13 +72,13 @@ public class Students {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Students students = (Students) o;
+        Student student = (Student) o;
 
-        if (id != students.id) return false;
-        if (group != students.group) return false;
-        if (fio != null ? !fio.equals(students.fio) : students.fio != null) return false;
-        if (scolarship != null ? !scolarship.equals(students.scolarship) : students.scolarship != null) return false;
-        if (dateEnter != null ? !dateEnter.equals(students.dateEnter) : students.dateEnter != null) return false;
+        if (id != student.id) return false;
+        if (groupNumber != student.groupNumber) return false;
+        if (fio != null ? !fio.equals(student.fio) : student.fio != null) return false;
+        if (scolarship != null ? !scolarship.equals(student.scolarship) : student.scolarship != null) return false;
+        if (dateEnter != null ? !dateEnter.equals(student.dateEnter) : student.dateEnter != null) return false;
 
         return true;
     }
@@ -87,7 +87,7 @@ public class Students {
     public int hashCode() {
         int result = id;
         result = 31 * result + (fio != null ? fio.hashCode() : 0);
-        result = 31 * result + group;
+        result = 31 * result + groupNumber;
         result = 31 * result + (scolarship != null ? scolarship.hashCode() : 0);
         result = 31 * result + (dateEnter != null ? dateEnter.hashCode() : 0);
         return result;

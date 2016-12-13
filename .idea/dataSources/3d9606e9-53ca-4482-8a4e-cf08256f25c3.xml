@@ -12,15 +12,15 @@
     <schema id="6" parent="1" name="sakila"/>
     <schema id="7" parent="1" name="sys"/>
     <schema id="8" parent="1" name="world"/>
-    <table id="9" parent="2" name="groups"/>
-    <table id="10" parent="2" name="students"/>
+    <table id="9" parent="2" name="group"/>
+    <table id="10" parent="2" name="student"/>
     <column id="11" parent="9" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="12" parent="9" name="group">
+    <column id="12" parent="9" name="groupNumber">
       <Position>2</Position>
       <DataType>int(10)|0</DataType>
       <NotNull>1</NotNull>
@@ -31,7 +31,7 @@
       <NotNull>1</NotNull>
     </column>
     <index id="14" parent="9" name="group_UNIQUE">
-      <ColNames>group</ColNames>
+      <ColNames>groupNumber</ColNames>
       <Unique>1</Unique>
     </index>
     <index id="15" parent="9" name="id_UNIQUE">
@@ -47,7 +47,7 @@
       <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
     </key>
     <key id="18" parent="9" name="group_UNIQUE">
-      <ColNames>group</ColNames>
+      <ColNames>groupNumber</ColNames>
       <UnderlyingIndexName>group_UNIQUE</UnderlyingIndexName>
     </key>
     <column id="19" parent="10" name="id">
@@ -61,7 +61,7 @@
       <DataType>varchar(75)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="21" parent="10" name="group">
+    <column id="21" parent="10" name="groupNumber">
       <Position>3</Position>
       <DataType>int(10)|0</DataType>
       <NotNull>1</NotNull>

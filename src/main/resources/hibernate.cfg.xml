@@ -7,17 +7,20 @@
 
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.show_sql">true</property>
-    <property name="hibernate.current_session_context_class">thread</property>
-    <property name="hibernate.connection.datasource">jdbc/university</property>
-    <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.connection.password">root</property>
     <property name="connection.url">jdbc:mysql://localhost:3306/university</property>
     <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 
-    <mapping resource="university/entities/Groups.hbm.xml"/>
-    <mapping class="university.entities.Groups"/>
-    <mapping class="university.entities.Students"/>
-    <mapping resource="university/entities/Students.hbm.xml"/>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <property name="hibernate.connection.datasource">jdbc/university</property>
+
+
+
+
+    <mapping class="com.university.entities.Group"/>
+    <mapping resource="com.university.entities/Group.hbm.xml"/>
+    <mapping class="com.university.entities.Student"/>
+    <mapping resource="com.university.entities/Student.hbm.xml"/>
+
 
     <!-- DB schema will be updated if needed -->
     <!-- <property name="hbm2ddl.auto">update</property> -->
