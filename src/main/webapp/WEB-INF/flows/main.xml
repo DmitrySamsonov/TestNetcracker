@@ -5,9 +5,6 @@
 
     <view-state id="main">
 
-        <on-render>
-            <evaluate expression="studentDAOImpl.students"/>
-        </on-render>
 
     </view-state>
 
