@@ -79,6 +79,26 @@
 </ui:define>
 
 
+
+        <ui:define name="books_count">
+
+                <div class="box-sh">
+
+                        <h1><p:outputLabel id="booksCount" value="#{msg.student_count}:  #{universityFacade.students.size()}" /></h1>
+
+                        <h:form id="add-action">
+                                <p:commandLink >
+                                        <h:outputText value="#{msg.add_student}" title="#{msg.add_student}"/>
+                                </p:commandLink>
+                        </h:form>
+
+
+                </div>
+
+        </ui:define>
+
+
+
 </ui:composition>
 
 </html>
