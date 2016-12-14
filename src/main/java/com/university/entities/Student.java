@@ -6,9 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.sql.Date;
 
-/**
- * Created by dima on 14.12.2016.
- */
 @Entity
 public class Student {
     private int id;
