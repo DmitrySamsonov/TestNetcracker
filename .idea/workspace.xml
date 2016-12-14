@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aaeeff47-aad0-4d21-a420-1f40c1a0ad30" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/main.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/main.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/header.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/header.xhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/university.xhtml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/university.xhtml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -78,18 +78,28 @@
       <file leaf-file-name="header.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/header.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="306">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="university.xhtml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="locales.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/locales.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="593">
+              <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="university.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/university.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state relative-caret-position="782">
+              <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -115,11 +125,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="genres.xhtml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="genres.xhtml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/genres.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="408">
+              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -132,38 +142,6 @@
               <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Student.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/university/entities/Student.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#404#405#0" expanded="false" />
-                <element signature="e#429#430#0" expanded="false" />
-                <element signature="e#462#463#0" expanded="false" />
-                <element signature="e#490#491#0" expanded="false" />
-                <element signature="e#557#558#0" expanded="false" />
-                <element signature="e#583#584#0" expanded="false" />
-                <element signature="e#621#622#0" expanded="false" />
-                <element signature="e#651#652#0" expanded="false" />
-                <element signature="e#731#732#0" expanded="false" />
-                <element signature="e#765#766#0" expanded="false" />
-                <element signature="e#816#817#0" expanded="false" />
-                <element signature="e#862#863#0" expanded="false" />
-                <element signature="e#943#944#0" expanded="false" />
-                <element signature="e#976#977#0" expanded="false" />
-                <element signature="e#1028#1029#0" expanded="false" />
-                <element signature="e#1072#1073#0" expanded="false" />
-                <element signature="e#1150#1151#0" expanded="false" />
-                <element signature="e#1182#1183#0" expanded="false" />
-                <element signature="e#1230#1231#0" expanded="false" />
-                <element signature="e#1272#1273#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -222,7 +200,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/jsf/faces-config.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/university/dao/impl/StudentDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/header.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/footer.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/search.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/main.xml" />
@@ -234,6 +211,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/main.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/genres.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/university.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/header.xhtml" />
       </list>
     </option>
   </component>
@@ -792,11 +770,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\vtornik\TestNetcracker\src\main\webapp\WEB-INF\templates" />
       <recent name="C:\vtornik\TestNetcracker\src\main\webapp\WEB-INF" />
       <recent name="C:\vtornik\TestNetcracker\src\main\webapp\WEB-INF\config" />
       <recent name="C:\vtornik\TestNetcracker\src\main\webapp\WEB-INF\spring" />
       <recent name="C:\vtornik\TestNetcracker\src\main\webapp\WEB-INF\jsf" />
-      <recent name="C:\vtornik\TestNetcracker\src\main\resources\com.university.entities" />
     </key>
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="com.university.entities" />
@@ -1331,12 +1309,12 @@
       <workItem from="1481477030677" duration="569000" />
       <workItem from="1481477652700" duration="4340000" />
       <workItem from="1481667279765" duration="18521000" />
-      <workItem from="1481732560575" duration="6965000" />
+      <workItem from="1481732560575" duration="7530000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47836000" />
+    <option name="totallyTimeSpent" value="48401000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="66" y="6" width="1648" height="1382" extended-state="0" />
@@ -1404,14 +1382,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/library.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/students.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/university/servlets/StudentsListServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -1473,14 +1443,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/header.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1582,14 +1544,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/genres.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/main.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
@@ -1598,10 +1552,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="117" column="13" lean-forward="true" selection-start-line="117" selection-start-column="13" selection-end-line="117" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/university.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state relative-caret-position="782">
+          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/header.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/locales.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="593">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/genres.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
       </provider>
