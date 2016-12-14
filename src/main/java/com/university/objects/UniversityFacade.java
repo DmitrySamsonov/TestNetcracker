@@ -14,7 +14,7 @@ public class UniversityFacade {
     private StudentDAO studentDAO;
 
     @Autowired
-    public void setBookDAO(StudentDAO studentDAO) {
+    public void setStudentDAO(StudentDAO studentDAO) {
         this.studentDAO = studentDAO;
         students = studentDAO.getStudents();
     }
