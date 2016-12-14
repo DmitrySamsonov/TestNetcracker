@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aaeeff47-aad0-4d21-a420-1f40c1a0ad30" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/university/objects/UniversityFacade.java" afterPath="$PROJECT_DIR$/src/main/java/com/university/objects/UniversityFacade.java" />
-    </list>
+    <list default="true" id="aaeeff47-aad0-4d21-a420-1f40c1a0ad30" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -706,7 +703,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/LibraryFlow_30/LibraryFlow_30" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.14965986" />
     <property name="project.structure.side.proportion" value="0.30396473" />
@@ -1256,12 +1253,12 @@
       <workItem from="1481477030677" duration="569000" />
       <workItem from="1481477652700" duration="4340000" />
       <workItem from="1481667279765" duration="18521000" />
-      <workItem from="1481732560575" duration="4163000" />
+      <workItem from="1481732560575" duration="4459000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45034000" />
+    <option name="totallyTimeSpent" value="45330000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="66" y="6" width="1648" height="1382" extended-state="0" />
