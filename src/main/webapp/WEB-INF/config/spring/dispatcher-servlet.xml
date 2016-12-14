@@ -13,6 +13,7 @@
     <mvc:resources mapping="/resources/**" location="/resources/" />
 
 
+    <!--для подключения шаблонов-->
     <bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
         <property name="flowRegistry" ref="flowRegistry"/>
         <property name="order" value="2"/>
@@ -28,6 +29,7 @@
             </value>
         </property>
     </bean>
+    <!--end для подключения шаблонов-->
 
 
 
@@ -43,25 +45,29 @@
     </bean>
 
 
-    <!--<bean id="msg" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">-->
-    <!--<property name="basename" value="/WEB-INF/locales/messages"/>-->
-    <!--<property name="defaultEncoding" value="UTF-8"/>-->
-    <!--</bean>-->
+    <!--локализация-->
+    <bean id="msg" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+    <property name="basename" value="/WEB-INF/locales/messages"/>
+    <property name="defaultEncoding" value="UTF-8"/>
+    </bean>
 
-
+    <!--по умолчанию = язык русский-->
     <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
         <property name="defaultLocale" value="ru"/>
     </bean>
+    <!--end локализация-->
 
+
+    <!--hibernate session-->
     <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
         <property name="jndiName" value="jdbc/university"/>
     </bean>
-
 
     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="configLocation" value="classpath:hibernate.cfg.xml" />
     </bean>
+    <!--end hibernate session-->
 
 
 
