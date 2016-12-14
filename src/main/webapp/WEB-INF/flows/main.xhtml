@@ -10,6 +10,65 @@
 <ui:composition template="/WEB-INF/templates/university.xhtml">
 
 
+<ui:define name="content">
+
+        <h:form id="booksForm" >
+
+
+            <p:dataGrid rowIndexVar="rowIndex" columns="2" lazy="true" var="b" value="${universityFacade.students}"
+                        id="booksList" styleClass="books_list"
+                        paginator="true" rows="4" paginatorPosition="bottom"
+                        rowsPerPageTemplate="4,10,20"
+                        paginatorTemplate="{RowsPerPageDropdown} {PageLinks}" paginatorAlwaysVisible="true" emptyMessage="">
+
+
+                <div class="item">
+
+                        <div class="image-info">
+
+                                <h:outputLink styleClass="content_link" target="_blank">
+                                        <p:graphicImage width="110" height="150"/>
+                                </h:outputLink>
+
+                                <p:panelGrid id="ratingPanel" columns="2" >
+
+
+                                </p:panelGrid>
+
+                        </div>
+
+
+
+                        <div class="info">
+                                <div class="book_name">
+                                        <h:outputLink id="bookName" styleClass="title" target="_blank">
+                                                #{b.fio}
+                                        </h:outputLink>
+
+                                </div>
+                                <span>#{b.groupNumber}</span>
+
+
+                        </div>
+
+
+
+
+
+                </div>
+
+
+
+
+            </p:dataGrid>
+
+
+        </h:form>
+
+
+
+</ui:define>
+
 
 </ui:composition>
 
