@@ -20,7 +20,7 @@ public class StudentsListServlet extends HttpServlet {
 
         System.out.println("HI HI HI HI HI HI HI HI");
 
-        RequestDispatcher editView = request.getRequestDispatcher("students.jsp");
-        editView.forward(request, response);
+//        RequestDispatcher editView = request.getRequestDispatcher("students.jsp");
+//        editView.forward(request, response);
     }
 }
