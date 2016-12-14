@@ -23,7 +23,7 @@ public class StudentDAOImpl implements StudentDAO {
 
 
     @Transactional
-//    @Override
+    @Override
     public List<Student> getStudents() {
 
         System.out.println("sessionFactory = " + sessionFactory);
