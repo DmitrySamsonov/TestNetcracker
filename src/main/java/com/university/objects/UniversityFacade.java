@@ -26,10 +26,6 @@ public class UniversityFacade {
 
 
     public List<Student> getStudents() {
-
-//        studentDAO = new StudentDAOImpl();
-
-
         try{
             students = studentDAO.getStudents();
         }
@@ -38,19 +34,29 @@ public class UniversityFacade {
         }
         return students;
     }
-
-
-    public int addStudent(Student student) {
-
-
-        int success= 0;
+    public Student getStudentById(int id) {
+        Student student = null;
         try{
-            success = studentDAO.addStudent(student);
+            student = studentDAO.getStudentById(id);
         }
         catch(Exception ex){
             System.out.println(ex);
         }
-        return success;
+        finally {
+            return student;
+        }
     }
+
+
+    public void addStudent(Student student) {
+        try{
+            studentDAO.addStudent(student);
+        }
+        catch(Exception ex){
+            System.out.println(ex);
+        }
+    }
+
+
 }
 

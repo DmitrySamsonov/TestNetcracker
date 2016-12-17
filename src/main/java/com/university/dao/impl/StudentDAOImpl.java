@@ -79,11 +79,8 @@ public class StudentDAOImpl implements StudentDAO {
     @Transactional
     @Override
     public void editStudent(Student student) {
-
-        int success = 0;
         try{
             sessionFactory.getCurrentSession().update(student);
-            success = 1;
         }
         catch(Exception ex){
             System.out.println(ex);
