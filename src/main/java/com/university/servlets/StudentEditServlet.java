@@ -32,7 +32,7 @@ public class StudentEditServlet extends HttpServlet {
         try {
             UniversityFacade universityFacade = (UniversityFacade) getServletContext().getAttribute("universityFacade");
 
-            universityFacade.addStudent(student);
+            universityFacade.editStudent(student);
 
         } catch (Exception ex) {
             ex.printStackTrace();
