@@ -66,6 +66,15 @@ public class UniversityFacade {
         }
     }
 
+    public void editStudent(Student student) {
+        try{
+            studentDAO.editStudent(student);
+        }
+        catch(Exception ex){
+            System.out.println(ex);
+        }
+    }
+
 
 }
 
