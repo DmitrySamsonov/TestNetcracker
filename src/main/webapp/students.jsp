@@ -10,6 +10,8 @@
 <p>
     studentsList
 </p>
+
+<a href="add">ADD new student</a>
 <table>
     <thead>
     <tr>

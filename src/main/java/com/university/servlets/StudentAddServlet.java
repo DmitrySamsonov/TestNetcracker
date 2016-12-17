@@ -1,16 +1,8 @@
 package com.university.servlets;
 
-import com.university.dao.impl.StudentDAOImpl;
-import com.university.dao.interfaces.StudentDAO;
 import com.university.entities.Student;
 import com.university.objects.UniversityFacade;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.web.context.WebApplicationContext;
-import org.springframework.web.context.support.WebApplicationContextUtils;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,18 +11,29 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Created by dima on 17.12.2016.
+ */
+@WebServlet(name = "StudentAddServlet",
+urlPatterns = {"/add"})
+public class StudentAddServlet extends HttpServlet {
 
-@WebServlet(name = "StudentsListServlet",
-urlPatterns = {"/StudentsListServlet"})
-public class StudentsListServlet extends HttpServlet {
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
+        processRequest(request, response);
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        processRequest(request, response);
+    }
 
 
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
+
+        request.getRequestDispatcher("student.jsp").forward(request, response);
     }
 }
+
