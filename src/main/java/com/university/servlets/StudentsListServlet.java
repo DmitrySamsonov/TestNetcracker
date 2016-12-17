@@ -24,13 +24,31 @@ import java.util.List;
 urlPatterns = {"/StudentsListServlet"})
 public class StudentsListServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
+        processRequest(request, response);
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        processRequest(request, response);
+
+    }
+
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        try {
+            UniversityFacade universityFacade = (UniversityFacade) getServletContext().getAttribute("universityFacade");
+
+            List<Student> studentsList = universityFacade.getStudents();
 
 
+            System.out.println("studentsList = " + studentsList);
+            request.setAttribute("entityArray", studentsList);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            request.getRequestDispatcher("students.jsp").forward(request, response);
+        }
 
     }
 }

@@ -28,11 +28,8 @@ public class StudentAddServlet extends HttpServlet {
         processRequest(request, response);
     }
 
-
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-
         request.getRequestDispatcher("student.jsp").forward(request, response);
     }
 }
