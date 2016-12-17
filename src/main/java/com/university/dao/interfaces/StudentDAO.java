@@ -8,7 +8,8 @@ import java.util.List;
 public interface StudentDAO {
 
     List<Student> getStudents();
-    int addStudent(Student student);
-    int editStudent(Student student);
+    void addStudent(Student student);
+    void editStudent(Student student);
+    void
 
 }
