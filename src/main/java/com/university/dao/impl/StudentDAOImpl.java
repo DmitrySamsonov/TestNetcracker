@@ -16,7 +16,6 @@ import com.university.entities.Student;
 @Component
 public class StudentDAOImpl implements StudentDAO {
 
-
     @Autowired
     private SessionFactory sessionFactory;
 
@@ -26,7 +25,6 @@ public class StudentDAOImpl implements StudentDAO {
     @Transactional
     @Override
     public List<Student> getStudents() {
-
         System.out.println("sessionFactory = " + sessionFactory);
         try{
             students = (List<Student>) sessionFactory.getCurrentSession()
@@ -36,8 +34,9 @@ public class StudentDAOImpl implements StudentDAO {
         catch(Exception ex){
             System.out.println(ex);
         }
-
-        return students;
+        finally{
+            return students;
+        }
     }
 
     @Transactional
@@ -51,16 +50,24 @@ public class StudentDAOImpl implements StudentDAO {
             System.out.println(ex);
         }
         finally {
-            return student;                
+            return student;
         }
     }
 
-
+    @Transactional
+    @Override
+    public void deleteStudent(int id) {
+        try{
+            sessionFactory.getCurrentSession().delete(getStudentById(id));
+        }
+        catch(Exception ex){
+            System.out.println(ex);
+        }
+    }
 
     @Transactional
     @Override
     public void addStudent(Student student) {
-
         try{
             sessionFactory.getCurrentSession().save(student);
         }
