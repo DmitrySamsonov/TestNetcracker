@@ -32,22 +32,27 @@ public class StudentEditServlet extends HttpServlet {
         try {
             UniversityFacade universityFacade = (UniversityFacade) getServletContext().getAttribute("universityFacade");
 
-            int success = universityFacade.addStudent(student);
+            universityFacade.addStudent(student);
 
         } catch (Exception ex) {
             ex.printStackTrace();
-        } finally {
-
         }
         request.getRequestDispatcher("students").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String id = request.getParameter("id");
+        int id = Integer.parseInt(request.getParameter("id"));
+        Student student = null;
+        try {
+            UniversityFacade universityFacade = (UniversityFacade) getServletContext().getAttribute("universityFacade");
 
-        request.setAttribute("student", BLClass.getElementById(id));
+            student= universityFacade.getStudentById(id);
+            request.setAttribute("student", student);
 
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
 
         request.setAttribute("wherefrom", "studentEdit");
         request.getRequestDispatcher("student.jsp").forward(request, response);

@@ -19,7 +19,7 @@
 
     String button = "Create";
 %>
-<% if( request.getAttribute("wherefrom") == "ButtonEdit") {
+<% if( request.getAttribute("wherefrom") == "studentEdit") {
     action = "edit";
 
     Student student = (Student)(request.getAttribute("student"));
