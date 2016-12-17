@@ -47,6 +47,22 @@
             <td><%=student.getScolarship()%></td>
             <td><%=student.getDateEnter()%></td>
         </tr>
+        <td>
+            <form class="login_form" name="Edit" action="ButtonEdit" method="POST">
+
+                <input type = "hidden" name = "id" value="<%=student.getId()%>">
+
+                <input type="submit" value="Edit" />
+            </form>
+        </td>
+        <td>
+            <form class="login_form" name="Delete" action="ButtonDelete" method="POST">
+
+                <input type = "hidden" name = "id" value="<%=student.getId()%>">
+
+                <input type="submit" value="Delete" />
+            </form>
+        </td>
 
     <%
         }
