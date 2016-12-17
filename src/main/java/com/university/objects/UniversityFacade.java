@@ -47,6 +47,15 @@ public class UniversityFacade {
         }
     }
 
+    public void deleteStudent(int id) {
+        try{
+            studentDAO.deleteStudent(id);
+        }
+        catch(Exception ex){
+            System.out.println(ex);
+        }
+    }
+
 
     public void addStudent(Student student) {
         try{
