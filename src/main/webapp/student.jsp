@@ -10,7 +10,7 @@
     hello Guys!
 </div>
 
-<%  String action = "ButtonCreate";
+<%  String action = "add";
     int id = 0;
     String fio = "";
     int groupNumber = 0;
@@ -20,9 +20,9 @@
     String button = "Create";
 %>
 <% if( request.getAttribute("wherefrom") == "ButtonEdit") {
-    action = "ButtonSave";
+    action = "edit";
 
-    Student student = (Student)(request.getAttribute("car"));
+    Student student = (Student)(request.getAttribute("student"));
     id = student.getId();
     fio = student.getFio();
     groupNumber = student.getGroupNumber();
@@ -36,9 +36,9 @@
 
         <input type = "hidden" name = "id" value="<%=id%>">
 
-        <p> fio <input type="text-area" name="model" value="<%=fio%>" size="40" /> </p>
-        <p> groupNumber <input type="text-area" name="country" value="<%=groupNumber%>" size="40" /> </p>
-        <p> scolarship <input type="text-area" name="count" value="<%=scolarship%>" size="40" /> </p>
+        <p> fio <input type="text-area" name="fio" value="<%=fio%>" size="40" /> </p>
+        <p> groupNumber <input type="text-area" name="groupNumber" value="<%=groupNumber%>" size="40" /> </p>
+        <p> scolarship <input type="text-area" name="scolarship" value="<%=scolarship%>" size="40" /> </p>
 
         <input type="submit" value="<%=button%>" />
     </form>

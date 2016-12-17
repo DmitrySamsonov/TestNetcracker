@@ -38,5 +38,19 @@ public class UniversityFacade {
         }
         return students;
     }
+
+
+    public int addStudent(Student student) {
+
+
+        int success= 0;
+        try{
+            success = studentDAO.addStudent(student);
+        }
+        catch(Exception ex){
+            System.out.println(ex);
+        }
+        return success;
+    }
 }
 

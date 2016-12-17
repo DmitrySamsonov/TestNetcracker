@@ -21,7 +21,7 @@ import java.util.List;
 
 
 @WebServlet(name = "StudentsListServlet",
-urlPatterns = {"/StudentsListServlet"})
+urlPatterns = {"/students"})
 public class StudentsListServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         processRequest(request, response);

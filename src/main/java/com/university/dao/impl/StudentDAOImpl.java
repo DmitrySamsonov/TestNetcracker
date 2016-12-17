@@ -32,6 +32,9 @@ public class StudentDAOImpl implements StudentDAO {
             students = (List<Student>) sessionFactory.getCurrentSession()
                     .createCriteria(Student.class)
                     .setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
+
+
+
         }
         catch(Exception ex){
             System.out.println(ex);
@@ -40,6 +43,26 @@ public class StudentDAOImpl implements StudentDAO {
         System.out.println("sessionFactory = " + sessionFactory);
 
         return students;
+    }
+
+
+
+    @Transactional
+    @Override
+    public int addStudent(Student student) {
+
+        System.out.println("sessionFactory = " + sessionFactory);
+        int success = 0;
+        try{
+            sessionFactory.getCurrentSession().save(student);
+            success = 1;
+        }
+        catch(Exception ex){
+            System.out.println(ex);
+        }
+
+
+        return success;
     }
 
 
