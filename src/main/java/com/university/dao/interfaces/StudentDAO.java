@@ -9,5 +9,6 @@ public interface StudentDAO {
 
     List<Student> getStudents();
     int addStudent(Student student);
+    int editStudent(Student student);
 
 }

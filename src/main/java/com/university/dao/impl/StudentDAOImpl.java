@@ -61,6 +61,22 @@ public class StudentDAOImpl implements StudentDAO {
             System.out.println(ex);
         }
 
+        return success;
+    }
+
+    @Transactional
+    @Override
+    public int editStudent(Student student) {
+
+        System.out.println("sessionFactory = " + sessionFactory);
+        int success = 0;
+        try{
+            sessionFactory.getCurrentSession().update(student);
+            success = 1;
+        }
+        catch(Exception ex){
+            System.out.println(ex);
+        }
 
         return success;
     }

@@ -48,7 +48,7 @@
             <td><%=student.getDateEnter()%></td>
         </tr>
         <td>
-            <form class="login_form" name="Edit" action="ButtonEdit" method="POST">
+            <form class="login_form" name="Edit" action="edit" method="GET">
 
                 <input type = "hidden" name = "id" value="<%=student.getId()%>">
 
@@ -56,7 +56,7 @@
             </form>
         </td>
         <td>
-            <form class="login_form" name="Delete" action="ButtonDelete" method="POST">
+            <form class="login_form" name="Delete" action="delete" method="GET">
 
                 <input type = "hidden" name = "id" value="<%=student.getId()%>">
 
