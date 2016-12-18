@@ -17,36 +17,33 @@ urlPatterns = {"/students"})
 public class StudentsListServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String searchData = (String)request.getParameter("searchData");
-        String searchCriteria = (String)request.getParameter("searchCriteria");
-
-        try {
-            StudentFacade studentFacade = (StudentFacade) getServletContext().getAttribute("studentFacade");
-
-            List<Student>  studentsList = studentFacade.getStudents(searchData, searchCriteria);
-
-
-            System.out.println("studentsList = " + studentsList);
-            request.setAttribute("entityArray", studentsList);
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        } finally {
-            request.getRequestDispatcher("students.jsp").forward(request, response);
-        }
-
+        processRequest(request, response);
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        processRequest(request, response);
+    }
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
+        String searchData = (String)request.getParameter("searchData");
+        String searchCriteria = (String)request.getParameter("searchCriteria");
+
+        List<Student> studentsList = null;
+        
         try {
             StudentFacade studentFacade = (StudentFacade) getServletContext().getAttribute("studentFacade");
 
-            List<Student> studentsList = studentFacade.getStudents();
+
+            if(searchData != null && searchCriteria != null){
+                studentsList = studentFacade.getStudents(searchData, searchCriteria);
+            }
+            else{
+                studentsList = studentFacade.getStudents();
+            }
 
 
-            System.out.println("studentsList = " + studentsList);
             request.setAttribute("entityArray", studentsList);
 
         } catch (Exception ex) {
@@ -54,7 +51,11 @@ public class StudentsListServlet extends HttpServlet {
         } finally {
             request.getRequestDispatcher("students.jsp").forward(request, response);
         }
+
+
+
     }
-
-
 }
+
+
+
