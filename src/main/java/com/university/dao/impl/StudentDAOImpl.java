@@ -63,9 +63,8 @@ public class StudentDAOImpl implements StudentDAO {
         System.out.println("sessionFactory = " + sessionFactory);
 
         try{
-            String query = groupNumber + "%";
             Criteria cr = sessionFactory.getCurrentSession().createCriteria(Student.class);
-            cr.add(Restrictions.like("groupNumber",query));
+            cr.add(Restrictions.like("groupNumber",groupNumber));
             students = (List<Student>)cr.list();
         }
         catch(Exception ex){

@@ -5,7 +5,6 @@
       <configuration>
         <datasource-map>
           <unit-entry name="hibernate.cfg.xml" value="3d9606e9-53ca-4482-8a4e-cf08256f25c3" />
-          <unit-entry name="hibernate3AnnotatedSessionFactory" value="dataSource" />
           <unit-entry name="sessionFactory" value="dataSource" />
         </datasource-map>
         <naming-strategy-map />

@@ -31,7 +31,7 @@ public class StudentsListServlet extends HttpServlet {
         String searchCriteria = (String)request.getParameter("searchCriteria");
 
         List<Student> studentsList = null;
-        
+
         try {
             StudentFacade studentFacade = (StudentFacade) getServletContext().getAttribute("studentFacade");
 
