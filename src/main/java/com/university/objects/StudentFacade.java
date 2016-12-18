@@ -13,7 +13,6 @@ import java.util.List;
 @Scope("singleton")
 public class StudentFacade {
 
-
     private StudentDAO studentDAO;
 
     @Autowired
@@ -32,6 +31,21 @@ public class StudentFacade {
         catch(Exception ex){
             System.out.println(ex);
         }
+        return students;
+    }
+    public List<Student> getStudents(String searchData, String searchCriteria) {
+        try{
+            if (searchCriteria.equals("fio")){
+            students = studentDAO.getStudents(searchData);
+            }
+            if(searchCriteria.equals("groupNumber")){
+                students = studentDAO.getStudents(Integer.parseInt(searchData));
+            }
+        }
+        catch(Exception ex){
+            System.out.println(ex);
+        }
+
         return students;
     }
     public Student getStudentById(int id) {

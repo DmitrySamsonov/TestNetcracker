@@ -8,6 +8,8 @@ import java.util.List;
 public interface StudentDAO {
 
     List<Student> getStudents();
+    List<Student> getStudents(String fio);
+    List<Student> getStudents(int groupNumber);
     Student getStudentById(int id);
     void deleteStudent(int id);
     void addStudent(Student student);

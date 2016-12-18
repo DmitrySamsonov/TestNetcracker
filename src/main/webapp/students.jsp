@@ -38,13 +38,13 @@
                             id
                         </th>
                         <th>
-                            fio
+                            FIO
                         </th>
                         <th>
-                            groupNumber
+                            GroupNumber
                         </th>
                         <th>
-                            field1
+                            Scolarship
                         </th>
                         <th>
                             field2

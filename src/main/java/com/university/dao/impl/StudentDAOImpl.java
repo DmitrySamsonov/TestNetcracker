@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
@@ -30,6 +31,42 @@ public class StudentDAOImpl implements StudentDAO {
             students = (List<Student>) sessionFactory.getCurrentSession()
                     .createCriteria(Student.class)
                     .setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
+        }
+        catch(Exception ex){
+            System.out.println(ex);
+        }
+        finally{
+            return students;
+        }
+    }
+
+    @Transactional
+    @Override
+    public List<Student> getStudents(String fio) {
+        System.out.println("sessionFactory = " + sessionFactory);
+        try{
+            String query = fio + "%";
+            Criteria cr = sessionFactory.getCurrentSession().createCriteria(Student.class);
+            cr.add(Restrictions.like("fio", query));
+            students = (List<Student>)cr.list();
+        }
+        catch(Exception ex){
+            System.out.println(ex);
+        }
+        finally{
+            return students;
+        }
+    }
+    @Transactional
+    @Override
+    public List<Student> getStudents(int groupNumber) {
+        System.out.println("sessionFactory = " + sessionFactory);
+
+        try{
+            String query = groupNumber + "%";
+            Criteria cr = sessionFactory.getCurrentSession().createCriteria(Student.class);
+            cr.add(Restrictions.like("groupNumber",query));
+            students = (List<Student>)cr.list();
         }
         catch(Exception ex){
             System.out.println(ex);

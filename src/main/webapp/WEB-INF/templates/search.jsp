@@ -23,8 +23,8 @@
 
             <div class="dropdown">
                 <select id="search_select" styleClass="select_search" name="searchCriteria">
-                    <option value="FIO">FIO</option>
-                    <option value="GroupNumber">GroupNumber</option>
+                    <option value="fio">FIO</option>
+                    <option value="groupNumber">GroupNumber</option>
                 </select>
             </div>
 

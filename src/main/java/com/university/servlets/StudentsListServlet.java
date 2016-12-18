@@ -17,13 +17,13 @@ urlPatterns = {"/students"})
 public class StudentsListServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getAttribute("searchData");
-        request.getAttribute("searchCriteria");
+        String searchData = (String)request.getParameter("searchData");
+        String searchCriteria = (String)request.getParameter("searchCriteria");
 
         try {
             StudentFacade studentFacade = (StudentFacade) getServletContext().getAttribute("studentFacade");
 
-            List<Student> studentsList = studentFacade.getStudents();
+            List<Student>  studentsList = studentFacade.getStudents(searchData, searchCriteria);
 
 
             System.out.println("studentsList = " + studentsList);
