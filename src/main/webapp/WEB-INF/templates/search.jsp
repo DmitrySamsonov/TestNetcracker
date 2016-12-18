@@ -22,7 +22,7 @@
         <input type="submit" id="btnSearch" value="Search" class="button" />
 
             <div class="dropdown">
-                <select id="search_select" styleClass="select_search" name="searchCriteria">
+                <select id="search_select" styleClass="select_search" name="searchCriteria" >
                     <option value="fio">FIO</option>
                     <option value="groupNumber">GroupNumber</option>
                 </select>

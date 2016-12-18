@@ -19,7 +19,7 @@ public class StudentEditServlet extends HttpServlet {
         int id= Integer.parseInt(request.getParameter("id"));
         String fio= request.getParameter("fio");
         int groupNumber= Integer.parseInt(request.getParameter("groupNumber"));
-        String scolarship= request.getParameter("scolarship");
+        Double scolarship= Double.parseDouble(request.getParameter("scolarship"));
 
         Student student = new Student();
         student.setId(id);

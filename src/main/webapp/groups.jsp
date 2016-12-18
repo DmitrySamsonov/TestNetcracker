@@ -5,7 +5,7 @@
 <html>
 <head>
     <title>Groups</title>
-
+    <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="resources/css/main.css">
     <link rel="stylesheet" type="text/css" href="resources/css/dialog.css">
 </head>
@@ -22,12 +22,12 @@
 
             <div class="right-content">
 
-                <p>
-                    <h2>Group List</h2>
+                <p class="list">
+                    Group List
                 </p>
 
 
-                <table>
+                <table class="table">
                     <thead>
                     <tr>
                         <%--<th class="hidden">id</th>--%>

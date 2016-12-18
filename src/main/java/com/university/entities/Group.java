@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 /**
- * Created by dima on 14.12.2016.
+ * Created by dima on 19.12.2016.
  */
 @Entity
 public class Group {

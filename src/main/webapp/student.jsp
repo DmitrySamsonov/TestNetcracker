@@ -5,7 +5,7 @@
 <html>
 <head>
     <title>Student</title>
-
+    <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="resources/css/main.css">
     <link rel="stylesheet" type="text/css" href="resources/css/dialog.css">
 </head>

@@ -68,29 +68,25 @@
     </column>
     <column id="22" parent="10" name="scolarship">
       <Position>4</Position>
-      <DataType>varchar(45)|0</DataType>
+      <DataType>float|0</DataType>
     </column>
-    <column id="23" parent="10" name="date_enter">
-      <Position>5</Position>
-      <DataType>date|0</DataType>
-    </column>
-    <index id="24" parent="10" name="FIO_UNIQUE">
+    <index id="23" parent="10" name="FIO_UNIQUE">
       <ColNames>fio</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="25" parent="10" name="id_UNIQUE">
+    <index id="24" parent="10" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="26" parent="10" name="PRIMARY">
+    <key id="25" parent="10" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="27" parent="10" name="id_UNIQUE">
+    <key id="26" parent="10" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
     </key>
-    <key id="28" parent="10" name="FIO_UNIQUE">
+    <key id="27" parent="10" name="FIO_UNIQUE">
       <ColNames>fio</ColNames>
       <UnderlyingIndexName>FIO_UNIQUE</UnderlyingIndexName>
     </key>

@@ -346,4 +346,13 @@ body {
 
 .btn {
     border-radius: 5%;
+    float:right;
+    display:block;
+    margin-right:0px;
+    clear:left;
+}
+.list{
+    font-size: 20px;
+    font-style: inherit;
+    margin-left: 5%;
 }

@@ -9,6 +9,5 @@
         <property name="fio" column="fio"/>
         <property name="groupNumber" column="groupNumber"/>
         <property name="scolarship" column="scolarship"/>
-        <property name="dateEnter" column="date_enter"/>
     </class>
 </hibernate-mapping>

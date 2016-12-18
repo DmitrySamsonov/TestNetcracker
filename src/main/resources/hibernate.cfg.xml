@@ -10,7 +10,7 @@
     <property name="connection.url">jdbc:mysql://localhost:3306/university</property>
     <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 
-    <!--<property name="hibernate.current_session_context_class">thread</property>-->
+      <!--<property name="hibernate.current_session_context_class">thread</property>-->
     <!--<property name="hibernate.connection.datasource">jdbc/university</property>-->
 
 
@@ -22,7 +22,7 @@
 
 
 
-    <!-- DB schema will be updated if needed -->
+      <!-- DB schema will be updated if needed -->
     <!-- <property name="hbm2ddl.auto">update</property> -->
   </session-factory>
 </hibernate-configuration>
