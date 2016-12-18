@@ -1,5 +1,5 @@
 <%@ page import="com.university.entities.Group" %>
-<%@ page import="com.university.objects.UniversityFacade" %>
+<%@ page import="com.university.objects.StudentFacade" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>

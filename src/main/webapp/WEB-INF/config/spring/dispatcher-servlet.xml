@@ -66,7 +66,7 @@
     <bean class="org.springframework.web.context.support.ServletContextAttributeExporter">
         <property name="attributes">
             <map>
-                <entry key="universityFacade" value-ref="universityFacade"/>
+                <entry key="studentFacade" value-ref="studentFacade"/>
             </map>
         </property>
     </bean>

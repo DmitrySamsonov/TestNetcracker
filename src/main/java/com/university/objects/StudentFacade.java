@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component("universityFacade")
+@Component("studentFacade")
 @Scope("singleton")
-public class UniversityFacade {
+public class StudentFacade {
 
 
     private StudentDAO studentDAO;

@@ -1,7 +1,7 @@
 package com.university.servlets;
 
 import com.university.entities.Student;
-import com.university.objects.UniversityFacade;
+import com.university.objects.StudentFacade;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 
 @WebServlet(name = "StudentAddServlet",
@@ -29,9 +28,9 @@ public class StudentAddServlet extends HttpServlet {
         student.setScolarship(scolarship);
 
         try {
-            UniversityFacade universityFacade = (UniversityFacade) getServletContext().getAttribute("universityFacade");
+            StudentFacade studentFacade = (StudentFacade) getServletContext().getAttribute("studentFacade");
 
-            universityFacade.addStudent(student);
+            studentFacade.addStudent(student);
 
         } catch (Exception ex) {
             ex.printStackTrace();
