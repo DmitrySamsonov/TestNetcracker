@@ -30,7 +30,6 @@
                 String fio = "";
                 int groupNumber = 0;
                 String scolarship = "";
-            //    Date dateEnter = "01.01.1970";
 
                 String button = "Create";
             %>
@@ -42,7 +41,6 @@
                 fio = student.getFio();
                 groupNumber = student.getGroupNumber();
                 scolarship = student.getScolarship();
-            //    dateEnter = student.getDateEnter();
                 button = "Save";
             } %>
 

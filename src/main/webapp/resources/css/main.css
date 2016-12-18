@@ -334,3 +334,16 @@ body {
     font-size: 30px;
     color:#aeaeae;
 }
+
+.table td {
+    font-size: 16px;
+}
+
+.table th {
+    font-size: 18px;
+    font-style: inherit;
+}
+
+.btn {
+    border-radius: 5%;
+}
