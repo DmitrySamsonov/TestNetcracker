@@ -10,8 +10,16 @@
 <p>
     studentsList
 </p>
+<p>
+    <a href="students">STUDENTS</a></p>
+<p>
+    <a href="groups">GROUPS</a>
+</p>
+<p>
+    <a href="add">ADD new student</a>
+</p>
 
-<a href="add">ADD new student</a>
+
 <table>
     <thead>
     <tr>
