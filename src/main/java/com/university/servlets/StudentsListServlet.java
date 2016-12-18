@@ -23,18 +23,11 @@ import java.util.List;
 @WebServlet(name = "StudentsListServlet",
 urlPatterns = {"/students"})
 public class StudentsListServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        processRequest(request, response);
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getAttribute("searchData");
+        request.getAttribute("searchCriteria");
 
-    }
-
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
         try {
             UniversityFacade universityFacade = (UniversityFacade) getServletContext().getAttribute("universityFacade");
 
@@ -51,4 +44,25 @@ public class StudentsListServlet extends HttpServlet {
         }
 
     }
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        try {
+            UniversityFacade universityFacade = (UniversityFacade) getServletContext().getAttribute("universityFacade");
+
+            List<Student> studentsList = universityFacade.getStudents();
+
+
+            System.out.println("studentsList = " + studentsList);
+            request.setAttribute("entityArray", studentsList);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            request.getRequestDispatcher("students.jsp").forward(request, response);
+        }
+    }
+
+
 }

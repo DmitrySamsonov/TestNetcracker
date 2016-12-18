@@ -16,15 +16,10 @@
 
 
     <div id="wrap">
-
         <%@ include file="/WEB-INF/templates/search.jsp"%>
 
-
         <div class="content">
-
             <%@ include file="/WEB-INF/templates/left-menu.jsp"%>
-
-
 
             <div class="right-content">
 

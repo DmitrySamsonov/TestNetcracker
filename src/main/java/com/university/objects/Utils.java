@@ -17,7 +17,6 @@ public class Utils {
     private Map<String, SearchType> searchTypeList = new HashMap<String, SearchType>();
     private SearchType selectedSearchType = SearchType.FIO;// значение по-умолчанию
 
-
     @Autowired
     private MessageSource msg;
 

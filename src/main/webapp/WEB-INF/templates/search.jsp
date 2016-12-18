@@ -2,20 +2,24 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="resources/css/main.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/dialog.css">
 </head>
 <body>
     <div class="search">
 
 
-        <form styleClass="search_form" id="search_form">
+        <form class="search_form" id="search_form" action="students" method="post">
 
 
-            <input type="submit" class="button-text"></input>
+        <input type="submit" class="button-text"></input>
 
 
-            <inputText  id="search_string" styleClass="search-text"/>
+        <input type="text" id="search_string" class="search-text" name="searchData" placeholder="enter for search"/>
 
-            <commandButton id="btnSearch" value="#{msg.search}" styleClass="button" />
+
+
+        <input type="submit" id="btnSearch" value="Search" class="button" />
 
             <div class="dropdown">
                 <select id="search_select" styleClass="select_search" name="searchCriteria">
@@ -24,9 +28,11 @@
                 </select>
             </div>
 
-            <script language="javascript">
-                document.getElementById("search_form:search_string").setAttribute("placeholder","#{msg.search_student}");
-            </script>
+
+
+        <%--<script language="javascript">--%>
+            <%--document.getElementById("search_form:search_string").setAttribute("placeholder","search student(s)");--%>
+        <%--</script>--%>
 
         </form>
 
