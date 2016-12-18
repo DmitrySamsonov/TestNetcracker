@@ -54,23 +54,24 @@
             <td><%=student.getGroupNumber()%></td>
             <td><%=student.getScolarship()%></td>
             <td><%=student.getDateEnter()%></td>
+            <td>
+                <form class="login_form" name="Edit" action="edit" method="GET">
+
+                    <input type = "hidden" name = "id" value="<%=student.getId()%>">
+
+                    <input type="submit" value="Edit" />
+                </form>
+            </td>
+            <td>
+                <form class="login_form" name="Delete" action="delete" method="POST">
+
+                    <input type = "hidden" name = "id" value="<%=student.getId()%>">
+
+                    <input type="submit" value="Delete" />
+                </form>
+            </td>
         </tr>
-        <tr>
-            <form class="login_form" name="Edit" action="edit" method="GET">
 
-                <input type = "hidden" name = "id" value="<%=student.getId()%>">
-
-                <input type="submit" value="Edit" />
-            </form>
-        </tr>
-        <tr>
-            <form class="login_form" name="Delete" action="delete" method="POST">
-
-                <input type = "hidden" name = "id" value="<%=student.getId()%>">
-
-                <input type="submit" value="Delete" />
-            </form>
-        </tr>
 
     <%
         }

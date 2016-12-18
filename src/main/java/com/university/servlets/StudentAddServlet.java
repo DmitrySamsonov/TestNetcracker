@@ -11,9 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * Created by dima on 17.12.2016.
- */
+
 @WebServlet(name = "StudentAddServlet",
 urlPatterns = {"/add"})
 public class StudentAddServlet extends HttpServlet {

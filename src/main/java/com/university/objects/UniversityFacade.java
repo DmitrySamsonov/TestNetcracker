@@ -16,11 +16,11 @@ public class UniversityFacade {
 
     private StudentDAO studentDAO;
 
-//    @Autowired
-//    public void setStudentDAO(StudentDAO studentDAO) {
-//        this.studentDAO = studentDAO;
-//        students = studentDAO.getStudents();
-//    }
+    @Autowired
+    public void setStudentDAO(StudentDAO studentDAO) {
+        this.studentDAO = studentDAO;
+        students = studentDAO.getStudents();
+    }
 
     private List<Student> students;
 

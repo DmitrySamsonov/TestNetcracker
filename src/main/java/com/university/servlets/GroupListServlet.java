@@ -11,9 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * Created by dima on 18.12.2016.
- */
+
 @WebServlet(name = "GroupListServlet",
 urlPatterns = {"/groups"})
 public class GroupListServlet extends HttpServlet {
@@ -27,6 +25,8 @@ public class GroupListServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+
         try {
             GroupFacade groupFacade = (GroupFacade) getServletContext().getAttribute("groupFacade");
 

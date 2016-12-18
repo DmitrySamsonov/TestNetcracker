@@ -10,9 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * Created by dima on 18.12.2016.
- */
+
 @WebServlet(name = "StudentDeleteServlet",
 urlPatterns = {"/delete"})
 public class StudentDeleteServlet extends HttpServlet {
