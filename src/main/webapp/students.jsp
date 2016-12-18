@@ -24,7 +24,7 @@
             <div class="right-content">
 
                 <p>
-                    studentsList
+                    <h2>Student List</h2>
                 </p>
                 <p>
                     <a href="add">ADD new student</a>
@@ -89,10 +89,7 @@
                     </tbody>
                 </table>
 
-
-
                 <div class="clear"></div>
-
 
             </div>
         </div>
