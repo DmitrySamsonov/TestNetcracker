@@ -15,23 +15,19 @@ import java.util.Map;
 public class Utils {
 
     private Map<String, SearchType> searchTypeList = new HashMap<String, SearchType>();
-    private SearchType selectedSearchType = SearchType.TITLE;// значение по-умолчанию
+    private SearchType selectedSearchType = SearchType.FIO;// значение по-умолчанию
 
 
     @Autowired
     private MessageSource msg;
 
-    private Character[] letters = new Character[]{'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь', 'Э', 'Ю', 'Я'};
-
-    public Character[] getLetters() {
-        return letters;
-    }
-
 
     public Map<String, SearchType> getSearchTypeList() {
         searchTypeList.clear();
-        searchTypeList.put(msg.getMessage("author_name", null, FacesContext.getCurrentInstance().getViewRoot().getLocale()), SearchType.AUTHOR);
-        searchTypeList.put(msg.getMessage("book_name", null, FacesContext.getCurrentInstance().getViewRoot().getLocale()), SearchType.TITLE);
+//      searchTypeList.put(msg.getMessage("author_name", null, FacesContext.getCurrentInstance().getViewRoot().getLocale()), SearchType.FIO);
+//      searchTypeList.put(msg.getMessage("book_name", null, FacesContext.getCurrentInstance().getViewRoot().getLocale()), SearchType.GROUPNUMBER);
+        searchTypeList.put("FIO", SearchType.FIO);
+        searchTypeList.put("GroupNumber", SearchType.GROUPNUMBER);
         return searchTypeList;
     }
 

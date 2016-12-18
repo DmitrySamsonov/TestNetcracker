@@ -26,7 +26,6 @@ public class GroupListServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-
         try {
             GroupFacade groupFacade = (GroupFacade) getServletContext().getAttribute("groupFacade");
 
