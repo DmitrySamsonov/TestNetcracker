@@ -50,7 +50,7 @@
                 <%=note%>
             </p>
 
-                <form class="form-vertical" name="newCar" action= "<%=action%>"  method="POST">
+                <form class="form-vertical" name="newCar" id="form-record" action= "<%=action%>"  method="POST">
                     <input type = "hidden" name = "id" value="<%=id%>">
 
                     <div class="form-group">
