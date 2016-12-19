@@ -35,10 +35,10 @@
                             id
                         </th>
                         <th>
-                            groupNumber
+                            GroupNumber
                         </th>
                         <th>
-                            department
+                            Department
                         </th>
 
                     </tr>

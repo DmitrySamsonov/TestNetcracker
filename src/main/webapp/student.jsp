@@ -28,8 +28,8 @@
                 String action = "add";
                 int id = 0;
                 String fio = "";
-                int groupNumber = 0;
-                Double scolarship = null;
+                String groupNumber = "";
+                String scolarship = "";
 
                 String button = "Create";
             %>
@@ -40,8 +40,8 @@
                 Student student = (Student)(request.getAttribute("student"));
                 id = student.getId();
                 fio = student.getFio();
-                groupNumber = student.getGroupNumber();
-                scolarship = student.getScolarship();
+                groupNumber = String.valueOf(student.getGroupNumber());
+                scolarship = String.valueOf(student.getScolarship());
                 button = "Save";
             } %>
             <p class="list">
