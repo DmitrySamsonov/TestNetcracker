@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="resources/css/dialog.css">
     <link rel="stylesheet" type="text/css" href="resources/css/main.css">
+    <script src="resources/js/jquery.min.js"></script>
+    <script src="resources/js/formValidate.js"></script>
 </head>
 <body>
 <div class="header">
@@ -53,15 +55,18 @@
 
                     <div class="form-group">
                         <label for="wrap">FIO:</label>
-                        <input type="text-area" class="form-control" name="fio" value="<%=fio%>" size="40"/>
+                        <input type="text-area" class="form-control" id="form_fio" name="fio" value="<%=fio%>" size="40"/>
+                        <span class="error_form" id="fio_error_message"></span>
                     </div>
                     <div class="form-group">
                         <label>GroupNumber:</label>
-                        <input type="text-area" name="groupNumber" value="<%=groupNumber%>" class="form-control">
+                        <input type="text-area" name="groupNumber" id="form_groupNumber" value="<%=groupNumber%>" class="form-control">
+                        <span class="error_form" id="groupNumber_error_message"></span>
                     </div>
                     <div class="form-group">
                         <label>Scolarship:</label>
-                        <input type="text-area" name="scolarship" value="<%=scolarship%>" class="form-control">
+                        <input type="text-area" name="scolarship" id="form_scolarship" value="<%=scolarship%>" class="form-control">
+                        <span class="error_form" id="scolarship_error_message"></span>
                     </div>
 
                     <button type="submit" class="btn btn-primary"><%=button%></button>
