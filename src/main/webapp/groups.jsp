@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="resources/css/main.css">
     <link rel="stylesheet" type="text/css" href="resources/css/dialog.css">
+    <script src="resources/js/jquery.min.js"></script>
 </head>
 <body>
     <div class="header">
