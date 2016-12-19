@@ -43,10 +43,7 @@
     <!--</bean>-->
 
 
-    <bean id="msg" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-        <property name="basename" value="/WEB-INF/locales/messages"/>
-        <property name="defaultEncoding" value="UTF-8"/>
-    </bean>
+
 
 
     <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
@@ -97,14 +94,14 @@
     </bean>
 
 
-    <mvc:interceptors>
-        <mvc:interceptor>
-            <mvc:mapping path="/**"/>
-            <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
-                <property name="paramName" value="lang"/>
-            </bean>
-        </mvc:interceptor>
-    </mvc:interceptors>
+    <!--<mvc:interceptors>-->
+        <!--<mvc:interceptor>-->
+            <!--<mvc:mapping path="/**"/>-->
+            <!--<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">-->
+                <!--<property name="paramName" value="lang"/>-->
+            <!--</bean>-->
+        <!--</mvc:interceptor>-->
+    <!--</mvc:interceptors>-->
 
 
 </beans>
