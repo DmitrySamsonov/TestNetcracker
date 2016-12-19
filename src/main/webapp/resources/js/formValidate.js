@@ -40,7 +40,7 @@ $(function(){
 
     function check_groupNumber() {
         var groupNumber_symbols = $("#form_groupNumber").val().match(/^[0-9]+$/);
-        var error_groupNumber = false;
+
 
         if ($("#form_groupNumber").val() < 0 || $("#form_groupNumber").val() > 999999) {
             $("#groupNumber_error_message").html("Should be xxxxxx, example 250501");
@@ -61,7 +61,7 @@ $(function(){
 
     function check_scolarship() {
         var scolarship_symbols = $("#form_scolarship").val().match(/^[0-9.]+$/);
-        var error_scolarship = false;
+
 
         if ($("#form_scolarship").val() < 1.0 || $("#form_scolarship").val() > 2.0) {
             $("#scolarship_error_message").html("Should be between 1.0 - 2.0");
