@@ -32,7 +32,9 @@ public class GroupFacade {
         catch(Exception ex){
             System.out.println(ex);
         }
-        return groups;
+        finally {
+            return groups;
+        }
     }
 
 

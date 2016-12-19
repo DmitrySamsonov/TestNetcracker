@@ -35,7 +35,8 @@ public class GroupListServlet extends HttpServlet {
             request.setAttribute("entityArray", groupList);
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            request.setAttribute("errorMessage", ex);
+            request.getRequestDispatcher("error.jsp").forward(request, response);
         } finally {
             request.getRequestDispatcher("groups.jsp").forward(request, response);
         }

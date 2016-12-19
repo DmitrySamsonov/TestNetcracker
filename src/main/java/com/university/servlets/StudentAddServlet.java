@@ -22,18 +22,19 @@ public class StudentAddServlet extends HttpServlet {
         int groupNumber= Integer.parseInt(request.getParameter("groupNumber"));
         Double scolarship= Double.parseDouble(request.getParameter("scolarship"));
 
-        Student student = new Student();
-        student.setFio(fio);
-        student.setGroupNumber(groupNumber);
-        student.setScolarship(scolarship);
-
         try {
+            Student student = new Student();
+            student.setFio(fio);
+            student.setGroupNumber(groupNumber);
+            student.setScolarship(scolarship);
+
             StudentFacade studentFacade = (StudentFacade) getServletContext().getAttribute("studentFacade");
 
             studentFacade.addStudent(student);
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            request.setAttribute("errorMessage", ex);
+            request.getRequestDispatcher("error.jsp").forward(request, response);
         } finally {
             request.getRequestDispatcher("students").forward(request, response);
         }

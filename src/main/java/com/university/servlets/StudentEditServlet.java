@@ -21,21 +21,26 @@ public class StudentEditServlet extends HttpServlet {
         int groupNumber= Integer.parseInt(request.getParameter("groupNumber"));
         Double scolarship= Double.parseDouble(request.getParameter("scolarship"));
 
-        Student student = new Student();
-        student.setId(id);
-        student.setFio(fio);
-        student.setGroupNumber(groupNumber);
-        student.setScolarship(scolarship);
+
 
         try {
+            Student student = new Student();
+            student.setId(id);
+            student.setFio(fio);
+            student.setGroupNumber(groupNumber);
+            student.setScolarship(scolarship);
+
             StudentFacade studentFacade = (StudentFacade) getServletContext().getAttribute("studentFacade");
 
             studentFacade.editStudent(student);
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            request.setAttribute("errorMessage", ex);
+            request.getRequestDispatcher("error.jsp").forward(request, response);
         }
-        request.getRequestDispatcher("students").forward(request, response);
+        finally {
+            request.getRequestDispatcher("students").forward(request, response);
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -49,7 +54,8 @@ public class StudentEditServlet extends HttpServlet {
             request.setAttribute("student", student);
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            request.setAttribute("errorMessage", ex);
+            request.getRequestDispatcher("error.jsp").forward(request, response);
         }
 
         request.setAttribute("wherefrom", "studentEdit");

@@ -47,13 +47,11 @@ public class StudentsListServlet extends HttpServlet {
             request.setAttribute("entityArray", studentsList);
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+            request.setAttribute("errorMessage", ex);
+            request.getRequestDispatcher("error.jsp").forward(request, response);
         } finally {
             request.getRequestDispatcher("students.jsp").forward(request, response);
         }
-
-
-
     }
 }
 

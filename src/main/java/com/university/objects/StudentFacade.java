@@ -31,7 +31,9 @@ public class StudentFacade {
         catch(Exception ex){
             System.out.println(ex);
         }
-        return students;
+        finally {
+            return students;
+        }
     }
     public List<Student> getStudents(String searchData, String searchCriteria) {
         try{
@@ -45,8 +47,9 @@ public class StudentFacade {
         catch(Exception ex){
             System.out.println(ex);
         }
-
-        return students;
+        finally {
+            return students;
+        }
     }
     public Student getStudentById(int id) {
         Student student = null;
