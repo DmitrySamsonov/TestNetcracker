@@ -356,3 +356,19 @@ body {
     font-style: inherit;
     margin-left: 5%;
 }
+
+.form-vertical{
+    font-size: 17px;
+    float:left;
+    display:block;
+    margin-left:5%;
+    margin-top:3%;
+    /*clear:right;*/
+}
+.btn-primary {
+    border-radius: 5%;
+    float:left;
+    display:block;
+    margin-left:40%;
+    clear:left;
+}

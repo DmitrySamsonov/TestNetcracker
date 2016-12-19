@@ -6,8 +6,9 @@
 <head>
     <title>Student</title>
     <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="resources/css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="resources/css/dialog.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/main.css">
 </head>
 <body>
 <div class="header">
@@ -22,18 +23,18 @@
 
         <div class="right-content">
 
-            <p>
-                <h2>Student</h2>
-            </p>
-            <%  String action = "add";
+
+            <%  String note ="Add New Student";
+                String action = "add";
                 int id = 0;
                 String fio = "";
                 int groupNumber = 0;
-                String scolarship = "";
+                Double scolarship = null;
 
                 String button = "Create";
             %>
             <% if( request.getAttribute("wherefrom") == "studentEdit") {
+                note = "Edit Student";
                 action = "edit";
 
                 Student student = (Student)(request.getAttribute("student"));
@@ -43,19 +44,29 @@
                 scolarship = student.getScolarship();
                 button = "Save";
             } %>
+            <p class="list">
+                <%=note%>
+            </p>
 
-            <div class="input_div">
-                <form class="login_form" name="newCar" action= "<%=action%>"  method="POST">
-
+                <form class="form-vertical" name="newCar" action= "<%=action%>"  method="POST">
                     <input type = "hidden" name = "id" value="<%=id%>">
 
-                    <p> fio <input type="text-area" name="fio" value="<%=fio%>" size="40" /> </p>
-                    <p> groupNumber <input type="text-area" name="groupNumber" value="<%=groupNumber%>" size="40" /> </p>
-                    <p> scolarship <input type="text-area" name="scolarship" value="<%=scolarship%>" size="40" /> </p>
+                    <div class="form-group">
+                        <label for="wrap">FIO:</label>
+                        <input type="text-area" class="form-control" name="fio" value="<%=fio%>" size="40"/>
+                    </div>
+                    <div class="form-group">
+                        <label>GroupNumber:</label>
+                        <input type="text-area" name="groupNumber" value="<%=groupNumber%>" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Scolarship:</label>
+                        <input type="text-area" name="scolarship" value="<%=scolarship%>" class="form-control">
+                    </div>
 
-                    <input type="submit" value="<%=button%>" />
+                    <button type="submit" class="btn btn-primary"><%=button%></button>
+
                 </form>
-            </div>
 
 
             <div class="clear"></div>
