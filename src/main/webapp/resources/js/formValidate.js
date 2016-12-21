@@ -1,4 +1,4 @@
-$(function(){
+$(function () {
     $("#fio_error_message").hide();
     $("#groupNumber_error_message").hide();
     $("#scolarship_error_message").hide();
@@ -6,19 +6,20 @@ $(function(){
     var error_fio = false;
     var error_groupNumber = false;
     var error_scolarship = false;
-
-    $("#form_fio").focusout(function(){
-        check_fio();
-    });
-    $("#form_groupNumber").focusout(function(){
-        check_groupNumber();
-    });
-    $("#form_scolarship").focusout(function(){
-        check_scolarship();
-    });
+    //
+    // $("++#+form_fio").focusout(function(){
+    //     check_fio();
+    // });
+    // $("++#++form_groupNumber").focusout(function(){
+    //     check_groupNumber();
+    // });
+    // $("+++#++++form_scolarship").focusout(function(){
+    //     check_scolarship();
+    // });
 
 
     function check_fio() {
+
         var fio_length = $("#form_fio").val().length;
         var fio_english = $("#form_fio").val().match(/^[-a-zA-Z ]+$/i);
 
@@ -28,17 +29,18 @@ $(function(){
             $("#fio_error_message").show();
             error_fio = true;
         }
-        if(!fio_english){
+        if (!fio_english) {
             $("#fio_error_message").html("Only A-Z a-z ");
             $("#fio_error_message").show();
             error_fio = true;
         }
-        if(error_fio == false){
+        if (error_fio == false) {
             $("#fio_error_message").hide();
         }
     }
 
     function check_groupNumber() {
+
         var groupNumber_symbols = $("#form_groupNumber").val().match(/^[0-9]+$/);
 
 
@@ -47,19 +49,19 @@ $(function(){
             $("#groupNumber_error_message").show();
             error_groupNumber = true;
         }
-        if(!groupNumber_symbols){
+        if (!groupNumber_symbols) {
             $("#groupNumber_error_message").html("Only Numbers 0-9");
             $("#groupNumber_error_message").show();
             error_groupNumber = true;
         }
-        if(error_groupNumber == false){
+        if (error_groupNumber == false) {
             $("#groupNumber_error_message").hide();
         }
     }
 
 
-
     function check_scolarship() {
+
         var scolarship_symbols = $("#form_scolarship").val().match(/^[0-9.]+$/);
 
 
@@ -68,18 +70,18 @@ $(function(){
             $("#scolarship_error_message").show();
             error_scolarship = true;
         }
-        if(!scolarship_symbols){
+        if (!scolarship_symbols) {
             $("#scolarship_error_message").html("Only Numbers 1.0 - 2.0");
             $("#scolarship_error_message").show();
             error_scolarship = true;
         }
-        if(error_scolarship == false){
+        if (error_scolarship == false) {
             $("#scolarship_error_message").hide();
         }
     }
 
 
-    $("#form-record").submit(function(){
+    $("#form-record").submit(function () {
 
         error_fio = false;
         error_groupNumber = false;
@@ -89,9 +91,10 @@ $(function(){
         check_groupNumber();
         check_scolarship();
 
-        if(error_fio == false && error_groupNumber == false && error_scolarship == false){
+
+        if (error_fio == false && error_groupNumber == false && error_scolarship == false) {
             return true;
-        }else{
+        } else {
             return false;
         }
 

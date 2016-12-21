@@ -12,17 +12,27 @@ import java.io.IOException;
 
 
 @WebServlet(name = "StudentAddServlet",
-urlPatterns = {"/add"})
+        urlPatterns = {"/add"})
 public class StudentAddServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String fio= request.getParameter("fio");
-        int groupNumber= Integer.parseInt(request.getParameter("groupNumber"));
-        Double scolarship= Double.parseDouble(request.getParameter("scolarship"));
-
         try {
+            String groupNumberParameter = request.getParameter("groupNumber");
+            String scolarshipParameter = request.getParameter("scolarship");
+            String fio = request.getParameter("fio");
+            int groupNumber = 0;
+            Double scolarship = 0.0;
+
+            if(groupNumberParameter!=null && groupNumberParameter!=""){
+                groupNumber = Integer.parseInt(groupNumberParameter);
+            }
+            if(scolarshipParameter!=null && scolarshipParameter!=""){
+                scolarship = Double.parseDouble(scolarshipParameter);
+            }
+
+
             Student student = new Student();
             student.setFio(fio);
             student.setGroupNumber(groupNumber);

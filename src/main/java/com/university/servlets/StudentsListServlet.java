@@ -13,7 +13,7 @@ import java.util.List;
 
 
 @WebServlet(name = "StudentsListServlet",
-urlPatterns = {"/students"})
+        urlPatterns = {"/students"})
 public class StudentsListServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -24,11 +24,12 @@ public class StudentsListServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         processRequest(request, response);
     }
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String searchData = (String)request.getParameter("searchData");
-        String searchCriteria = (String)request.getParameter("searchCriteria");
+        String searchData = (String) request.getParameter("searchData");
+        String searchCriteria = (String) request.getParameter("searchCriteria");
 
         List<Student> studentsList = null;
 
@@ -36,10 +37,9 @@ public class StudentsListServlet extends HttpServlet {
             StudentFacade studentFacade = (StudentFacade) getServletContext().getAttribute("studentFacade");
 
 
-            if(searchData != null && searchCriteria != null){
+            if (searchData != null && searchCriteria != null) {
                 studentsList = studentFacade.getStudents(searchData, searchCriteria);
-            }
-            else{
+            } else {
                 studentsList = studentFacade.getStudents();
             }
 

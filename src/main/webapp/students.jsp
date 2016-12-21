@@ -1,5 +1,4 @@
 <%@ page import="com.university.entities.Student" %>
-<%@ page import="com.university.objects.StudentFacade" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -11,12 +10,12 @@
 
 </head>
 <body>
-    <div class="header">
-        <%@ include file="/WEB-INF/templates/header.jsp"%>
-    </div>
+<div class="header">
+    <%@ include file="/WEB-INF/templates/header.jsp" %>
+</div>
 
 
-    <div id="wrap">
+<div id="wrap">
         <%@ include file="/WEB-INF/templates/search.jsp"%>
 
         <div class="content">
@@ -39,10 +38,9 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <%--<th class="hidden">id</th>--%>
-                            <th>
-                                id
-                            </th>
+                            <%--<th>--%>
+                                <%--id--%>
+                            <%--</th>--%>
                             <th>
                                 FIO
                             </th>
@@ -63,15 +61,16 @@
                         <div class="info">
                             <div class="image-info">
                         <tr>
-                            <%--<td class="hidden idField">${student.id}</td>--%>
-                            <td><%=student.getId()%></td>
+                            <td style="display:none;" type="hidden">${student.id}</td>
+                            <%--<td><+%+=student.getId()%></td>--%>
                             <td><%=student.getFio()%></td>
                             <td><%=student.getGroupNumber()%></td>
-                                <td>
-                                    <% if(student.getScolarship()!=null){%>
-                            <%=student.getScolarship()%>
+                            <td>
+                                <% if(student.getScolarship()!=null){%>
+                                     <%=student.getScolarship()%>
                                 <%}%>
-                                </td>
+                            </td>
+
                             <td>
                                 <form class="mr" name="Edit" action="edit" method="GET">
 

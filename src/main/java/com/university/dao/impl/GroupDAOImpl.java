@@ -2,7 +2,6 @@ package com.university.dao.impl;
 
 import com.university.dao.interfaces.GroupDAO;
 import com.university.entities.Group;
-import com.university.entities.Student;
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Component
-public class GroupDAOImpl implements GroupDAO{
+public class GroupDAOImpl implements GroupDAO {
 
 
     @Autowired
@@ -24,21 +23,16 @@ public class GroupDAOImpl implements GroupDAO{
     @Override
     public List<Group> getGroups() {
         System.out.println("sessionFactory = " + sessionFactory);
-        try{
+        try {
             groups = (List<Group>) sessionFactory.getCurrentSession()
                     .createCriteria(Group.class)
                     .setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
-        }
-        catch(Exception ex){
+        } catch (Exception ex) {
             System.out.println(ex);
-        }
-        finally{
+        } finally {
             return groups;
         }
     }
-
-
-
 
 
 }

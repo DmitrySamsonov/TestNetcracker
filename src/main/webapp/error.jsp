@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8" %>
 <html>
 <head>
     <title>Error</title>
@@ -8,19 +8,19 @@
     <link rel="stylesheet" type="text/css" href="resources/css/dialog.css">
 </head>
 <body>
-    <div class="header">
-        <%@ include file="/WEB-INF/templates/header.jsp"%>
-    </div>
+<div class="header">
+    <%@ include file="/WEB-INF/templates/header.jsp" %>
+</div>
 
-    <div class="content-wrapper">
-        <div class="before-footer">
-            <h1 align="center">Error</h1>
-            <h3 align="center">
-                Sorry, error.
-                Error message was: ${errorMessage}
-            </h3>
-        </div>
+<div class="content-wrapper">
+    <div class="before-footer">
+        <h1 align="center">Error</h1>
+        <h3 align="center">
+            Sorry, error.
+            Error message was: ${errorMessage}
+        </h3>
     </div>
+</div>
 
 </body>
 </html>

@@ -21,23 +21,18 @@ public class GroupFacade {
     }
 
 
-
     private List<Group> groups;
 
 
-    public List<Group> getGroups(){
-        try{
+    public List<Group> getGroups() {
+        try {
             groups = groupDAO.getGroups();
-        }
-        catch(Exception ex){
+        } catch (Exception ex) {
             System.out.println(ex);
-        }
-        finally {
+        } finally {
             return groups;
         }
     }
-
-
 
 
 }

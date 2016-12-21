@@ -11,11 +11,12 @@ import java.io.IOException;
 
 
 @WebServlet(name = "StudentDeleteServlet",
-urlPatterns = {"/delete"})
+        urlPatterns = {"/delete"})
 public class StudentDeleteServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         processRequest(request, response);
     }
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -23,7 +24,7 @@ public class StudentDeleteServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        int id= Integer.parseInt(request.getParameter("id"));
+        int id = Integer.parseInt(request.getParameter("id"));
         try {
             StudentFacade studentFacade = (StudentFacade) getServletContext().getAttribute("studentFacade");
 

@@ -1,17 +1,15 @@
 package com.university.dao.impl;
 
-import java.util.List;
-
-import org.hibernate.Session;
+import com.university.dao.interfaces.StudentDAO;
+import com.university.entities.Student;
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import com.university.dao.interfaces.StudentDAO;
-import com.university.entities.Student;
+
+import java.util.List;
 
 
 @Component
@@ -27,15 +25,13 @@ public class StudentDAOImpl implements StudentDAO {
     @Override
     public List<Student> getStudents() {
         System.out.println("sessionFactory = " + sessionFactory);
-        try{
+        try {
             students = (List<Student>) sessionFactory.getCurrentSession()
                     .createCriteria(Student.class)
                     .setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
-        }
-        catch(Exception ex){
+        } catch (Exception ex) {
             System.out.println(ex);
-        }
-        finally{
+        } finally {
             return students;
         }
     }
@@ -44,33 +40,30 @@ public class StudentDAOImpl implements StudentDAO {
     @Override
     public List<Student> getStudents(String fio) {
         System.out.println("sessionFactory = " + sessionFactory);
-        try{
+        try {
             String query = fio + "%";
             Criteria cr = sessionFactory.getCurrentSession().createCriteria(Student.class);
             cr.add(Restrictions.like("fio", query));
-            students = (List<Student>)cr.list();
-        }
-        catch(Exception ex){
+            students = (List<Student>) cr.list();
+        } catch (Exception ex) {
             System.out.println(ex);
-        }
-        finally{
+        } finally {
             return students;
         }
     }
+
     @Transactional
     @Override
     public List<Student> getStudents(int groupNumber) {
         System.out.println("sessionFactory = " + sessionFactory);
 
-        try{
+        try {
             Criteria cr = sessionFactory.getCurrentSession().createCriteria(Student.class);
-            cr.add(Restrictions.like("groupNumber",groupNumber));
-            students = (List<Student>)cr.list();
-        }
-        catch(Exception ex){
+            cr.add(Restrictions.like("groupNumber", groupNumber));
+            students = (List<Student>) cr.list();
+        } catch (Exception ex) {
             System.out.println(ex);
-        }
-        finally{
+        } finally {
             return students;
         }
     }
@@ -79,13 +72,11 @@ public class StudentDAOImpl implements StudentDAO {
     @Override
     public Student getStudentById(int id) {
         Student student = null;
-        try{
+        try {
             student = (Student) sessionFactory.getCurrentSession().get(Student.class, id);
-        }
-        catch(Exception ex){
+        } catch (Exception ex) {
             System.out.println(ex);
-        }
-        finally {
+        } finally {
             return student;
         }
     }
@@ -93,10 +84,9 @@ public class StudentDAOImpl implements StudentDAO {
     @Transactional
     @Override
     public void deleteStudent(int id) {
-        try{
+        try {
             sessionFactory.getCurrentSession().delete(getStudentById(id));
-        }
-        catch(Exception ex){
+        } catch (Exception ex) {
             System.out.println(ex);
         }
     }
@@ -104,10 +94,9 @@ public class StudentDAOImpl implements StudentDAO {
     @Transactional
     @Override
     public void addStudent(Student student) {
-        try{
+        try {
             sessionFactory.getCurrentSession().save(student);
-        }
-        catch(Exception ex){
+        } catch (Exception ex) {
             System.out.println(ex);
         }
     }
@@ -115,14 +104,12 @@ public class StudentDAOImpl implements StudentDAO {
     @Transactional
     @Override
     public void editStudent(Student student) {
-        try{
+        try {
             sessionFactory.getCurrentSession().update(student);
-        }
-        catch(Exception ex){
+        } catch (Exception ex) {
             System.out.println(ex);
         }
     }
-
 
 
 }

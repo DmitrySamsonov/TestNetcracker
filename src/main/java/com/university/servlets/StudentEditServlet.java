@@ -12,18 +12,32 @@ import java.io.IOException;
 
 
 @WebServlet(name = "StudentEditServlet",
-urlPatterns = {"/edit"})
+        urlPatterns = {"/edit"})
 public class StudentEditServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        int id= Integer.parseInt(request.getParameter("id"));
-        String fio= request.getParameter("fio");
-        int groupNumber= Integer.parseInt(request.getParameter("groupNumber"));
-        Double scolarship= Double.parseDouble(request.getParameter("scolarship"));
-
-
-
         try {
+            int id = Integer.parseInt(request.getParameter("id"));
+
+            String groupNumberParameter = request.getParameter("groupNumber");
+            String scolarshipParameter = request.getParameter("scolarship");
+            String fio = request.getParameter("fio");
+
+            int groupNumber = 0;
+            Double scolarship = 0.0;
+
+            if(groupNumberParameter!=null && groupNumberParameter!=""){
+                groupNumber = Integer.parseInt(groupNumberParameter);
+            }
+            if(scolarshipParameter!=null && scolarshipParameter!=""){
+                scolarship = Double.parseDouble(scolarshipParameter);
+            }
+
+
+
+
+
+
             Student student = new Student();
             student.setId(id);
             student.setFio(fio);
@@ -37,8 +51,7 @@ public class StudentEditServlet extends HttpServlet {
         } catch (Exception ex) {
             request.setAttribute("errorMessage", ex);
             request.getRequestDispatcher("error.jsp").forward(request, response);
-        }
-        finally {
+        } finally {
             request.getRequestDispatcher("students").forward(request, response);
         }
     }
@@ -50,7 +63,7 @@ public class StudentEditServlet extends HttpServlet {
         try {
             StudentFacade studentFacade = (StudentFacade) getServletContext().getAttribute("studentFacade");
 
-            student= studentFacade.getStudentById(id);
+            student = studentFacade.getStudentById(id);
             request.setAttribute("student", student);
 
         } catch (Exception ex) {

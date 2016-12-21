@@ -13,7 +13,7 @@ import java.util.List;
 
 
 @WebServlet(name = "GroupListServlet",
-urlPatterns = {"/groups"})
+        urlPatterns = {"/groups"})
 public class GroupListServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         processRequest(request, response);
