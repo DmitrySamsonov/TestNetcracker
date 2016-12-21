@@ -6,16 +6,6 @@ $(function () {
     var error_fio = false;
     var error_groupNumber = false;
     var error_scolarship = false;
-    //
-    // $("++#+form_fio").focusout(function(){
-    //     check_fio();
-    // });
-    // $("++#++form_groupNumber").focusout(function(){
-    //     check_groupNumber();
-    // });
-    // $("+++#++++form_scolarship").focusout(function(){
-    //     check_scolarship();
-    // });
 
 
     function check_fio() {

@@ -38,9 +38,6 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <%--<th>--%>
-                                <%--id--%>
-                            <%--</th>--%>
                             <th>
                                 FIO
                             </th>
@@ -62,7 +59,6 @@
                             <div class="image-info">
                         <tr>
                             <td style="display:none;" type="hidden">${student.id}</td>
-                            <%--<td><+%+=student.getId()%></td>--%>
                             <td><%=student.getFio()%></td>
                             <td><%=student.getGroupNumber()%></td>
                             <td>

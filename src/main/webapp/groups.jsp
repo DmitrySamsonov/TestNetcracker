@@ -30,9 +30,6 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <%--<th>--%>
-                        <%--id--%>
-                    <%--</th>--%>
                     <th>
                         GroupNumber
                     </th>
@@ -50,7 +47,6 @@
                 %>
                 <tr>
                     <td style="display:none;" type="hidden">${student.id}</td>
-                    <%--<td><+%+=group.getId()%>--%>
                     </td>
                     <td><%=group.getGroupNumber()%>
                     </td>
