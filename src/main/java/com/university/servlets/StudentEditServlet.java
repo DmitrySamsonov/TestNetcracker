@@ -33,6 +33,8 @@ public class StudentEditServlet extends HttpServlet {
                 scolarship = Double.parseDouble(scolarshipParameter);
             }
 
+//            TODO если не забыл, тут мои косяки при попытке сделать scolarship необязательным полем
+//            TODO не может обработать толи null String то ли "" строку!
 
 
 

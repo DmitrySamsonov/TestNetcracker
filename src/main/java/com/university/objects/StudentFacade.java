@@ -1,5 +1,6 @@
 package com.university.objects;
 
+import com.mysql.jdbc.exceptions.MySQLTimeoutException;
 import com.university.dao.interfaces.StudentDAO;
 import com.university.entities.Student;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,16 +18,18 @@ public class StudentFacade {
     @Autowired
     public void setStudentDAO(StudentDAO studentDAO) {
         this.studentDAO = studentDAO;
-        students = studentDAO.getStudents();
     }
 
     private List<Student> students;
 
 
-    public List<Student> getStudents() {
+    public List<Student> getStudents() throws MySQLTimeoutException{
         try {
             students = studentDAO.getStudents();
-        } catch (Exception ex) {
+        }catch (MySQLTimeoutException ex){
+            throw ex;
+        }
+        catch (Exception ex) {
             System.out.println(ex);
         } finally {
             return students;

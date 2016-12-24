@@ -1,5 +1,6 @@
 package com.university.dao.impl;
 
+import com.mysql.jdbc.exceptions.MySQLTimeoutException;
 import com.university.dao.interfaces.StudentDAO;
 import com.university.entities.Student;
 import org.hibernate.Criteria;
@@ -23,12 +24,13 @@ public class StudentDAOImpl implements StudentDAO {
 
     @Transactional
     @Override
-    public List<Student> getStudents() {
+    public List<Student> getStudents() throws MySQLTimeoutException{
         System.out.println("sessionFactory = " + sessionFactory);
         try {
             students = (List<Student>) sessionFactory.getCurrentSession()
                     .createCriteria(Student.class)
                     .setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
+
         } catch (Exception ex) {
             System.out.println(ex);
         } finally {

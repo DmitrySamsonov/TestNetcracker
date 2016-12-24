@@ -27,7 +27,9 @@ public class GroupDAOImpl implements GroupDAO {
             groups = (List<Group>) sessionFactory.getCurrentSession()
                     .createCriteria(Group.class)
                     .setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
-        } catch (Exception ex) {
+        } catch(NullPointerException nullEx){
+
+        }catch (Exception ex) {
             System.out.println(ex);
         } finally {
             return groups;

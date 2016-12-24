@@ -1,5 +1,6 @@
 package com.university.dao.interfaces;
 
+import com.mysql.jdbc.exceptions.MySQLTimeoutException;
 import com.university.entities.Student;
 
 import java.util.List;
@@ -7,9 +8,9 @@ import java.util.List;
 
 public interface StudentDAO {
 
-    List<Student> getStudents();
+    List<Student> getStudents() throws MySQLTimeoutException;
 
-    List<Student> getStudents(String fio);
+    List<Student> getStudents(String fio) ;
 
     List<Student> getStudents(int groupNumber);
 

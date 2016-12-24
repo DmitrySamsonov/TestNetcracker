@@ -10,6 +10,8 @@
 
 </head>
 <body>
+
+<%--TODO так писать нельзя!--%>
 <div class="header">
     <%@ include file="/WEB-INF/templates/header.jsp" %>
 </div>
@@ -39,7 +41,7 @@
                         <thead>
                         <tr>
                             <th>
-                                FIO
+                                Name
                             </th>
                             <th>
                                 GroupNumber
