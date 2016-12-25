@@ -10,7 +10,7 @@ import javax.persistence.Id;
 public class Student {
     private int id;
     private String fio;
-    private int groupNumber;
+    private Integer groupNumber;
     private Double scolarship;
 
     @Id
@@ -35,11 +35,11 @@ public class Student {
 
     @Basic
     @Column(name = "groupNumber")
-    public int getGroupNumber() {
+    public Integer getGroupNumber() {
         return groupNumber;
     }
 
-    public void setGroupNumber(int groupNumber) {
+    public void setGroupNumber(Integer groupNumber) {
         this.groupNumber = groupNumber;
     }
 
@@ -61,8 +61,8 @@ public class Student {
         Student student = (Student) o;
 
         if (id != student.id) return false;
-        if (groupNumber != student.groupNumber) return false;
         if (fio != null ? !fio.equals(student.fio) : student.fio != null) return false;
+        if (groupNumber != null ? !groupNumber.equals(student.groupNumber) : student.groupNumber != null) return false;
         if (scolarship != null ? !scolarship.equals(student.scolarship) : student.scolarship != null) return false;
 
         return true;
@@ -72,7 +72,7 @@ public class Student {
     public int hashCode() {
         int result = id;
         result = 31 * result + (fio != null ? fio.hashCode() : 0);
-        result = 31 * result + groupNumber;
+        result = 31 * result + (groupNumber != null ? groupNumber.hashCode() : 0);
         result = 31 * result + (scolarship != null ? scolarship.hashCode() : 0);
         return result;
     }

@@ -19,7 +19,7 @@
     <mapping resource="com.university.entities/Student.hbm.xml"/>
     <mapping class="com.university.entities.Group"/>
     <mapping class="com.university.entities.Student"/>
-
+   
 
 
       <!-- DB schema will be updated if needed -->

@@ -62,12 +62,11 @@
       <NotNull>1</NotNull>
     </column>
     <column id="21" parent="10" name="groupNumber">
-      <Position>3</Position>
-      <DataType>int(10)|0</DataType>
-      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
     </column>
     <column id="22" parent="10" name="scolarship">
-      <Position>4</Position>
+      <Position>3</Position>
       <DataType>float|0</DataType>
     </column>
     <index id="23" parent="10" name="FIO_UNIQUE">
@@ -78,17 +77,26 @@
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="25" parent="10" name="PRIMARY">
+    <index id="25" parent="10" name="groupNumber">
+      <ColNames>groupNumber</ColNames>
+    </index>
+    <key id="26" parent="10" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="26" parent="10" name="id_UNIQUE">
+    <key id="27" parent="10" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
     </key>
-    <key id="27" parent="10" name="FIO_UNIQUE">
+    <key id="28" parent="10" name="FIO_UNIQUE">
       <ColNames>fio</ColNames>
       <UnderlyingIndexName>FIO_UNIQUE</UnderlyingIndexName>
     </key>
+    <foreign-key id="29" parent="10" name="student_ibfk_1">
+      <ColNames>groupNumber</ColNames>
+      <RefSchemaName>university</RefSchemaName>
+      <RefTableName>group</RefTableName>
+      <RefColNames>groupNumber</RefColNames>
+    </foreign-key>
   </database-model>
 </dataSource>
