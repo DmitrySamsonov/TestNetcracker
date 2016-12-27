@@ -26,6 +26,7 @@
     </bean>
 
 
+    <bean name="GroupFacade" class="com.university.objects.GroupFacade"/>
 
     <bean class="org.springframework.web.context.support.ServletContextAttributeExporter">
         <property name="attributes">

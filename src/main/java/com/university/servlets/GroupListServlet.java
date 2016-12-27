@@ -2,6 +2,8 @@ package com.university.servlets;
 
 import com.university.entities.Group;
 import com.university.objects.GroupFacade;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,10 +13,16 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-
+//@Controller
 @WebServlet(name = "GroupListServlet",
         urlPatterns = {"/groups"})
 public class GroupListServlet extends HttpServlet {
+//
+//    @Autowired
+//    GroupFacade groupFacade;
+
+
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -25,6 +33,9 @@ public class GroupListServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+
+
 
         try {
             GroupFacade groupFacade = (GroupFacade) getServletContext().getAttribute("groupFacade");

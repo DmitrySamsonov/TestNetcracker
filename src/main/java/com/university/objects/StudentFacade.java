@@ -7,23 +7,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Component("studentFacade")
-@Scope("singleton")
+//@Scope("singleton")
 public class StudentFacade {
 
+    @Autowired
     private StudentDAO studentDAO;
 
-    @Autowired
-    public void setStudentDAO(StudentDAO studentDAO) {
-        this.studentDAO = studentDAO;
-    }
-
-    private List<Student> students;
-
-
     public List<Student> getStudents() throws MySQLTimeoutException{
+        List<Student> students = new ArrayList<Student>();
         try {
             students = studentDAO.getStudents();
         }catch (MySQLTimeoutException ex){
@@ -37,6 +32,7 @@ public class StudentFacade {
     }
 
     public List<Student> getStudents(String searchData, String searchCriteria) {
+        List<Student> students = new ArrayList<Student>();
         try {
             if (searchCriteria.equals("fio")) {
                 students = studentDAO.getStudents(searchData);

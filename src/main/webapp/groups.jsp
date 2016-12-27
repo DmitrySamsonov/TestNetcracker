@@ -52,6 +52,8 @@
                     </td>
                     <td><%=group.getDepartment()%>
                     </td>
+                    <td><%=group.getDepartment()%>
+                    </td>
                 </tr>
 
 

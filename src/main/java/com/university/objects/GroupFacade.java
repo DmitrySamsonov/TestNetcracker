@@ -6,25 +6,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Component("groupFacade")
-@Scope("singleton")
+//@Scope("singleton")
 public class GroupFacade {
 
+    @Autowired
     private GroupDAO groupDAO;
 
-    @Autowired
-    public void setStudentDAO(GroupDAO groupDAO) {
-        this.groupDAO = groupDAO;
-        groups = groupDAO.getGroups();
-    }
-
-
-    private List<Group> groups;
-
-
     public List<Group> getGroups() {
+
+        List<Group> groups = new ArrayList<Group>();
         try {
             groups = groupDAO.getGroups();
         } catch (Exception ex) {
