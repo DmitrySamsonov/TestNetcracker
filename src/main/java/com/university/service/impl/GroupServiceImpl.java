@@ -1,15 +1,18 @@
-package com.university.service;
+package com.university.service.impl;
 
 import com.university.dao.interfaces.GroupDAO;
 import com.university.entities.Group;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Component("groupService")
-public class GroupService {
+//@Component("groupServiceImpl")
+//@Component
+@Service
+public class GroupServiceImpl {
 
     @Autowired
     private GroupDAO groupDAO;

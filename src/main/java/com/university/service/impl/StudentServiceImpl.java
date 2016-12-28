@@ -1,4 +1,4 @@
-package com.university.service;
+package com.university.service.impl;
 
 import com.mysql.jdbc.exceptions.MySQLTimeoutException;
 import com.university.dao.interfaces.StudentDAO;
@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component("studentService")
-public class StudentService {
+@Component("studentServiceImpl")
+public class StudentServiceImpl {
 
     @Autowired
     private StudentDAO studentDAO;

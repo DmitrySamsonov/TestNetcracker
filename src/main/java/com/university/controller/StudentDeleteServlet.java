@@ -1,6 +1,6 @@
-package com.university.servlets;
+package com.university.controller;
 
-import com.university.service.StudentService;
+import com.university.service.impl.StudentServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,15 +26,17 @@ public class StudentDeleteServlet extends HttpServlet {
 
         int id = Integer.parseInt(request.getParameter("id"));
         try {
-            StudentService studentService = (StudentService) getServletContext().getAttribute("studentService");
+            StudentServiceImpl studentServiceImpl = (StudentServiceImpl) getServletContext().getAttribute("studentServiceImpl");
 
-            studentService.deleteStudent(id);
+            studentServiceImpl.deleteStudent(id);
 
         } catch (Exception ex) {
             request.setAttribute("errorMessage", ex);
             request.getRequestDispatcher("error.jsp").forward(request, response);
         } finally {
-            request.getRequestDispatcher("students").forward(request, response);
+
+            String url = response.encodeRedirectURL("students");
+            response.sendRedirect(url);
         }
 
     }

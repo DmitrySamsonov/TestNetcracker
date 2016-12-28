@@ -1,7 +1,10 @@
-package com.university.servlets;
+package com.university.controller;
 
 import com.university.entities.Group;
-import com.university.service.GroupService;
+import com.university.service.impl.GroupServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,15 +14,14 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-//@Controller
+@Controller
+//@Service
 @WebServlet(name = "GroupListServlet",
         urlPatterns = {"/groups"})
 public class GroupListServlet extends HttpServlet {
-//
-//    @Autowired
-//    GroupService groupFacade;
 
-
+    @Autowired
+    GroupServiceImpl groupServiceImpl;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         processRequest(request, response);
@@ -32,13 +34,10 @@ public class GroupListServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-
-
-
         try {
-            GroupService groupService = (GroupService) getServletContext().getAttribute("groupService");
+            GroupServiceImpl groupServiceImpl = (GroupServiceImpl) getServletContext().getAttribute("groupServiceImpl");
 
-            List<Group> groupList = groupService.getGroups();
+            List<Group> groupList = groupServiceImpl.getGroups();
 
             System.out.println("groupList = " + groupList);
             request.setAttribute("entityArray", groupList);
@@ -48,6 +47,7 @@ public class GroupListServlet extends HttpServlet {
             request.getRequestDispatcher("error.jsp").forward(request, response);
         } finally {
             request.getRequestDispatcher("groups.jsp").forward(request, response);
+
         }
     }
 }

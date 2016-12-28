@@ -1,7 +1,7 @@
-package com.university.servlets;
+package com.university.controller;
 
 import com.university.entities.Student;
-import com.university.service.StudentService;
+import com.university.service.impl.StudentServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -34,13 +34,13 @@ public class StudentsListServlet extends HttpServlet {
         List<Student> studentsList = null;
 
         try {
-            StudentService studentService = (StudentService) getServletContext().getAttribute("studentService");
+            StudentServiceImpl studentServiceImpl = (StudentServiceImpl) getServletContext().getAttribute("studentServiceImpl");
 
 
             if (searchData != null && searchCriteria != null) {
-                studentsList = studentService.getStudents(searchData, searchCriteria);
+                studentsList = studentServiceImpl.getStudents(searchData, searchCriteria);
             } else {
-                studentsList = studentService.getStudents();
+                studentsList = studentServiceImpl.getStudents();
             }
 
 
