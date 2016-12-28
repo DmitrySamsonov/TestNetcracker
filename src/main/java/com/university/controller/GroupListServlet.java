@@ -2,10 +2,16 @@ package com.university.controller;
 
 import com.university.entities.Group;
 import com.university.service.impl.GroupServiceImpl;
+import com.university.service.interfaces.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.SpringBeanAutowiringSupport;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,14 +20,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@Controller
-//@Service
+
 @WebServlet(name = "GroupListServlet",
         urlPatterns = {"/groups"})
 public class GroupListServlet extends HttpServlet {
-
-    @Autowired
-    GroupServiceImpl groupServiceImpl;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         processRequest(request, response);
@@ -35,9 +37,9 @@ public class GroupListServlet extends HttpServlet {
             throws ServletException, IOException {
 
         try {
-            GroupServiceImpl groupServiceImpl = (GroupServiceImpl) getServletContext().getAttribute("groupServiceImpl");
+            GroupServiceImpl groupService = (GroupServiceImpl) getServletContext().getAttribute("groupServiceImpl");
 
-            List<Group> groupList = groupServiceImpl.getGroups();
+            List<Group> groupList = groupService.getGroups();
 
             System.out.println("groupList = " + groupList);
             request.setAttribute("entityArray", groupList);

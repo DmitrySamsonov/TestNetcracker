@@ -2,6 +2,7 @@ package com.university.service.impl;
 
 import com.university.dao.interfaces.GroupDAO;
 import com.university.entities.Group;
+import com.university.service.interfaces.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -9,10 +10,8 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-//@Component("groupServiceImpl")
-//@Component
 @Service
-public class GroupServiceImpl {
+public class GroupServiceImpl implements GroupService{
 
     @Autowired
     private GroupDAO groupDAO;

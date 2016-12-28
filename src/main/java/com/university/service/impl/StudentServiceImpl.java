@@ -5,12 +5,13 @@ import com.university.dao.interfaces.StudentDAO;
 import com.university.entities.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Component("studentServiceImpl")
-public class StudentServiceImpl {
+@Service
+public class StudentServiceImpl{
 
     @Autowired
     private StudentDAO studentDAO;
