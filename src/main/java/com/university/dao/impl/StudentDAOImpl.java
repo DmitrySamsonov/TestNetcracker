@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -19,12 +20,12 @@ public class StudentDAOImpl implements StudentDAO {
     @Autowired
     private SessionFactory sessionFactory;
 
-    private List<Student> students;
-
 
     @Transactional
     @Override
     public List<Student> getStudents() throws MySQLTimeoutException{
+
+        List<Student> students = new ArrayList<Student>();
         System.out.println("sessionFactory = " + sessionFactory);
         try {
             students = (List<Student>) sessionFactory.getCurrentSession()
@@ -41,6 +42,8 @@ public class StudentDAOImpl implements StudentDAO {
     @Transactional
     @Override
     public List<Student> getStudents(String fio) {
+
+        List<Student> students = new ArrayList<Student>();
         System.out.println("sessionFactory = " + sessionFactory);
         try {
             String query = fio + "%";
@@ -57,6 +60,7 @@ public class StudentDAOImpl implements StudentDAO {
     @Transactional
     @Override
     public List<Student> getStudents(int groupNumber) {
+        List<Student> students = new ArrayList<Student>();
         System.out.println("sessionFactory = " + sessionFactory);
 
         try {

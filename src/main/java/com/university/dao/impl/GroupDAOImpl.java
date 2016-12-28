@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -16,12 +17,14 @@ public class GroupDAOImpl implements GroupDAO {
 
     @Autowired
     private SessionFactory sessionFactory;
-    private List<Group> groups;
+
 
 
     @Transactional
     @Override
     public List<Group> getGroups() {
+
+        List<Group> groups = new ArrayList<Group>();
         System.out.println("sessionFactory = " + sessionFactory);
         try {
             groups = (List<Group>) sessionFactory.getCurrentSession()

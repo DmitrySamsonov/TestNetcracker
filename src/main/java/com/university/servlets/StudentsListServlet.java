@@ -1,7 +1,7 @@
 package com.university.servlets;
 
 import com.university.entities.Student;
-import com.university.objects.StudentFacade;
+import com.university.service.StudentService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -34,13 +34,13 @@ public class StudentsListServlet extends HttpServlet {
         List<Student> studentsList = null;
 
         try {
-            StudentFacade studentFacade = (StudentFacade) getServletContext().getAttribute("studentFacade");
+            StudentService studentService = (StudentService) getServletContext().getAttribute("studentService");
 
 
             if (searchData != null && searchCriteria != null) {
-                studentsList = studentFacade.getStudents(searchData, searchCriteria);
+                studentsList = studentService.getStudents(searchData, searchCriteria);
             } else {
-                studentsList = studentFacade.getStudents();
+                studentsList = studentService.getStudents();
             }
 
 

@@ -1,9 +1,7 @@
 package com.university.servlets;
 
 import com.university.entities.Group;
-import com.university.objects.GroupFacade;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import com.university.service.GroupService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,7 +17,7 @@ import java.util.List;
 public class GroupListServlet extends HttpServlet {
 //
 //    @Autowired
-//    GroupFacade groupFacade;
+//    GroupService groupFacade;
 
 
 
@@ -38,9 +36,9 @@ public class GroupListServlet extends HttpServlet {
 
 
         try {
-            GroupFacade groupFacade = (GroupFacade) getServletContext().getAttribute("groupFacade");
+            GroupService groupService = (GroupService) getServletContext().getAttribute("groupService");
 
-            List<Group> groupList = groupFacade.getGroups();
+            List<Group> groupList = groupService.getGroups();
 
             System.out.println("groupList = " + groupList);
             request.setAttribute("entityArray", groupList);

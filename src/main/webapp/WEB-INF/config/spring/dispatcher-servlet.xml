@@ -26,12 +26,12 @@
     </bean>
 
 
-    <bean name="GroupFacade" class="com.university.objects.GroupFacade"/>
+    <bean name="GroupService" class="com.university.service.GroupService"/>
 
     <bean class="org.springframework.web.context.support.ServletContextAttributeExporter">
         <property name="attributes">
             <map>
-                <entry key="studentFacade" value-ref="studentFacade"/>
+                <entry key="studentService" value-ref="studentService"/>
             </map>
         </property>
     </bean>
@@ -39,7 +39,7 @@
     <bean class="org.springframework.web.context.support.ServletContextAttributeExporter">
         <property name="attributes">
             <map>
-                <entry key="groupFacade" value-ref="groupFacade"/>
+                <entry key="groupService" value-ref="groupService"/>
             </map>
         </property>
     </bean>

@@ -1,18 +1,16 @@
-package com.university.objects;
+package com.university.service;
 
 import com.mysql.jdbc.exceptions.MySQLTimeoutException;
 import com.university.dao.interfaces.StudentDAO;
 import com.university.entities.Student;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Component("studentFacade")
-//@Scope("singleton")
-public class StudentFacade {
+@Component("studentService")
+public class StudentService {
 
     @Autowired
     private StudentDAO studentDAO;

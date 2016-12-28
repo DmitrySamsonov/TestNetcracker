@@ -1,6 +1,6 @@
 package com.university.servlets;
 
-import com.university.objects.StudentFacade;
+import com.university.service.StudentService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,9 +26,9 @@ public class StudentDeleteServlet extends HttpServlet {
 
         int id = Integer.parseInt(request.getParameter("id"));
         try {
-            StudentFacade studentFacade = (StudentFacade) getServletContext().getAttribute("studentFacade");
+            StudentService studentService = (StudentService) getServletContext().getAttribute("studentService");
 
-            studentFacade.deleteStudent(id);
+            studentService.deleteStudent(id);
 
         } catch (Exception ex) {
             request.setAttribute("errorMessage", ex);
