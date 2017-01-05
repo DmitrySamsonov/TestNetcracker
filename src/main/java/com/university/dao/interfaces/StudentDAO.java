@@ -8,7 +8,9 @@ import java.util.List;
 
 public interface StudentDAO {
 
-    List<Student> getStudents() throws MySQLTimeoutException;
+    List<Student> getStudents() throws NullPointerException, Exception;
+
+    List<Student> getStudents(String sortBy, boolean asc) throws MySQLTimeoutException;
 
     List<Student> getStudents(String fio) ;
 

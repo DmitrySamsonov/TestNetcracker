@@ -11,6 +11,7 @@ public class Group {
     private int id;
     private int groupNumber;
     private String department;
+    private String numbers;
 
     @Id
     @Column(name = "id")
@@ -41,6 +42,17 @@ public class Group {
     public void setDepartment(String department) {
         this.department = department;
     }
+
+//    @Basic
+//    @Column(name = "numbers")
+    public String getNumbers() {
+        return numbers;
+    }
+    public void setNumbers(String numbers) {
+        this.numbers = numbers;
+    }
+
+
 
     @Override
     public boolean equals(Object o) {

@@ -41,13 +41,13 @@
                         <thead>
                         <tr>
                             <th>
-                                Name
+                                <a href="students?sortBy=Name">Name</a>
                             </th>
                             <th>
-                                GroupNumber
+                                <a href="students?sortBy=GroupNumber">GroupNumber</a>
                             </th>
                             <th>
-                                Scolarship
+                                <a href="students?sortBy=Scolarship">Scolarship</a>
                             </th>
                         </tr>
                         </thead>

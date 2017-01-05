@@ -28,10 +28,13 @@ public class StudentsListServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        String sortBy = (String) request.getParameter("sortBy");
+
         String searchData = (String) request.getParameter("searchData");
         String searchCriteria = (String) request.getParameter("searchCriteria");
 
         List<Student> studentsList = null;
+
 
         try {
             StudentServiceImpl studentServiceImpl = (StudentServiceImpl) getServletContext().getAttribute("studentServiceImpl");
@@ -40,18 +43,23 @@ public class StudentsListServlet extends HttpServlet {
             if (searchData != null && searchCriteria != null) {
                 studentsList = studentServiceImpl.getStudents(searchData, searchCriteria);
             } else {
-                studentsList = studentServiceImpl.getStudents();
+
+                if (sortBy != null)
+                    studentsList = studentServiceImpl.getStudents(sortBy, true);
+                else
+                    studentsList = studentServiceImpl.getStudents();
             }
 
 
             request.setAttribute("entityArray", studentsList);
 
-        } catch (Exception ex) {
-            request.setAttribute("errorMessage", ex);
-            request.getRequestDispatcher("error.jsp").forward(request, response);
-        } finally {
-            request.getRequestDispatcher("students.jsp").forward(request, response);
         }
+        catch (Exception ex) {
+            request.setAttribute("errorMessage", ex.getMessage());
+            request.getRequestDispatcher("error.jsp").forward(request, response);
+        }
+        request.getRequestDispatcher("students.jsp").forward(request, response);
+
     }
 }
 

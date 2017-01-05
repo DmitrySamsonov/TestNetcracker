@@ -1,5 +1,6 @@
 <%@ page import="com.university.entities.Group" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -41,18 +42,19 @@
                 </thead>
                 <tbody>
                 <%
-                    ArrayList<Group> list = (ArrayList<Group>) request.getAttribute("entityArray");
+                    List<Group> list = (List<Group>) request.getAttribute("entityArray");
 
                     for (Group group : list) {
                 %>
                 <tr>
-                    <td style="display:none;" type="hidden">${student.id}</td>
+                    <td>
+                        <%=group.getGroupNumber()%>
                     </td>
-                    <td><%=group.getGroupNumber()%>
+                    <td>
+                        <%=group.getDepartment()%>
                     </td>
-                    <td><%=group.getDepartment()%>
-                    </td>
-                    <td><%=group.getDepartment()%>
+                    <td>
+                        <%=group.getNumbers()%>
                     </td>
                 </tr>
 

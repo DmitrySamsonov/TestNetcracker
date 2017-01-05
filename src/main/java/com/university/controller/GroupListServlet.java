@@ -38,8 +38,28 @@ public class GroupListServlet extends HttpServlet {
 
         try {
             GroupServiceImpl groupService = (GroupServiceImpl) getServletContext().getAttribute("groupServiceImpl");
+//            Object a = getServletContext().getAttribute("groupService");
+//          GroupService groupService = (GroupService) a ;
+
 
             List<Group> groupList = groupService.getGroups();
+//            List<Group> groupList = ((GroupService) a).getGroups();
+
+
+//            for (Group group : groupList) {
+//
+//                group.getGroupNumber();
+//
+//                group.getDepartment();
+//
+//                group.getNumbers();
+//
+//            }
+
+
+
+
+
 
             System.out.println("groupList = " + groupList);
             request.setAttribute("entityArray", groupList);

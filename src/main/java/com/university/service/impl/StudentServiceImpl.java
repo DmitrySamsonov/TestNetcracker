@@ -16,10 +16,25 @@ public class StudentServiceImpl{
     @Autowired
     private StudentDAO studentDAO;
 
-    public List<Student> getStudents() throws MySQLTimeoutException{
+    public List<Student> getStudents() throws NullPointerException, Exception{
         List<Student> students = new ArrayList<Student>();
         try {
             students = studentDAO.getStudents();
+        }catch (NullPointerException e){
+            throw new NullPointerException(e.getMessage()+" throw service");
+//            throw e;
+        }
+        catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+        return students;
+    }
+
+
+    public List<Student> getStudents(String sortBy, boolean asc) throws MySQLTimeoutException{
+        List<Student> students = new ArrayList<Student>();
+        try {
+            students = studentDAO.getStudents(sortBy, asc);
         }catch (MySQLTimeoutException ex){
             throw ex;
         }

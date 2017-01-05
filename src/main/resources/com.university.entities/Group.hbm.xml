@@ -8,5 +8,6 @@
         <id name="id" column="id"/>
         <property name="groupNumber" column="groupNumber"/>
         <property name="department" column="department"/>
+        <!--<property name="numbers" column="numbers"/>-->
     </class>
 </hibernate-mapping>
